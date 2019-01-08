@@ -1,0 +1,31 @@
+.wrapper{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    width: 80%;
+    height: 500px;
+    margin: 5% auto 0 auto;
+    overflow: hidden;
+} 
+
+.content{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.leftside{
+    width: 40%;
+    height: 100%;
+    float: left;
+    background-image: url("../../../assets/img/1.jpg");
+    background-size: cover;
+} 
+
+.tint{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: .80;
+} 
