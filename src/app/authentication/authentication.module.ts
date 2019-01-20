@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthenticationComponent } from './authentication.component';
-import { LeftsideComponent } from './left-side/left-side.component';
-import { LoginComponent } from './login/login.component';
-import { MessComponent } from './mess/mess.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+
+import { AuthenticationComponent } from '@authentication/authentication.component';
+import { AuthRoutingModule } from '@authentication/auth-routing.module'
+import { LoginComponent } from '@authentication/login/login.component';
+import { MessComponent } from '@authentication/mess/mess.component';
+import { SignUpComponent } from '@authentication/sign-up/sign-up.component';
 
 @NgModule({
-  declarations: [LeftsideComponent, LoginComponent, MessComponent, SignUpComponent],
-  imports: [
-    CommonModule
+  declarations: [
+    LoginComponent, 
+    MessComponent, 
+    SignUpComponent,
+    AuthenticationComponent
   ],
-  exports:[
-    LeftsideComponent,
-    LoginComponent
-  ]
+  imports: [
+    CommonModule,
+    AuthRoutingModule
+  ],
+  exports:[AuthRoutingModule]
 })
 export class AuthenticationModule { }

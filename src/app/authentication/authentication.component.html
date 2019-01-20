@@ -1,3 +1,22 @@
-<p>
-  authentication works!
-</p>
+<div class="wrapper">
+  <!-- left side of the login page with random messages from the company -->
+  <div class="leftside">
+      <div class="tint">
+          <app-mess></app-mess>
+      </div>
+  </div>
+
+  <!-- Router side to showcase [signup,login,forget password] -->
+   <div class="rightside content">
+  <!--  <div class="control">
+      <a [routerLink]="['signup']">Signup</a>
+      <a [routerLink]="['login']">Login</a>
+    </div> -->
+    <router-outlet></router-outlet>
+      <!-- <app-login></app-login> -->
+      <!-- <app-sign-up></app-sign-up> -->
+  </div>
+  
+</div>
+
+

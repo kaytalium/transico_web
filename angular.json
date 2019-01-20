@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cw": {
+    "transico-web": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cw",
+            "outputPath": "dist/transico-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cw:build"
+            "browserTarget": "transico-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cw:build:production"
+              "browserTarget": "transico-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cw:build"
+            "browserTarget": "transico-web:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
         }
       }
     },
-    "cw-e2e": {
+    "transico-web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cw:serve"
+            "devServerTarget": "transico-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cw:serve:production"
+              "devServerTarget": "transico-web:serve:production"
             }
           }
         },
@@ -131,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "cw"
+  "defaultProject": "transico-web"
 }
