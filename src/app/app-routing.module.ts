@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'auth', pathMatch: 'full'},
-  {path: 'auth', loadChildren: './authentication/authentication.module#AuthenticationModule'}
+  {path: '', redirectTo: 'application', pathMatch: 'full'},
+  {path: 'auth', loadChildren: './authentication/authentication.module#AuthenticationModule'},
+  {path: 'application', loadChildren: './frame/frame.module#MainFrameModule'}
+
 ];
 
 @NgModule({

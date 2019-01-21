@@ -1,0 +1,43 @@
+.wrapper{
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #696767;
+    background: #1d1d24;
+}
+
+.title_holder{
+    height: 100%;
+    width: 150px;
+    /* background: green; */
+    line-break: auto;
+    font-weight: 600;
+    padding-left: 15px;
+    color: aliceblue;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-right: 2px solid #44444d;
+    float: left;
+}
+
+.search{
+    float: left;
+    width: 400px;
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.notification_controls{
+    height: 100%;
+    width: 20%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-right: 20px;
+    background: purple;
+}

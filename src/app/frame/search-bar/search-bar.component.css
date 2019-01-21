@@ -1,0 +1,33 @@
+.wrapper{
+    background: #ffffff;
+    height: 30px;
+    width: 400px;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+}
+
+.input_search{
+    width: 85%;    
+    height: 80%;
+    margin: auto 0;
+    /* background: green; */
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    float: left;
+        
+}
+
+.search_btn{
+    outline: none;
+    border: none;
+    background: blue;
+    width: 13%;
+    height: 100%;    
+
+    
+    float: right;
+
+}

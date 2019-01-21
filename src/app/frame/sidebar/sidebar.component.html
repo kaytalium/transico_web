@@ -1,0 +1,23 @@
+<div class="wrapper">
+
+  <!-- Main application logo -->
+  <div class="logo">
+    Tran<em>sico</em>
+  </div>
+
+  <!-- user avatar and profile -->
+  <div class="user_settings">
+    <user-settings></user-settings>
+  </div>
+
+  <!-- navigation links and icons -->
+  <div class="navigation">
+    <ul>
+      <li class="active" title="Transico Dashboard" (click)="navigate(navigationURL.dashboard)"><img src="{{navigationImages.dashboard}}" alt="" />Dashboard</li>
+      <li (click)="navigate(navigationURL.scheduleManager)"><img src="{{navigationImages.scheduleManager}}" alt="" />Schedule Manager</li>
+      <li (click)="navigate(navigationURL.vehicleManager)"><img src="{{navigationImages.vehicleManager}}" alt="" />Vehicle Manager</li>
+      <li (click)="navigate(navigationURL.maintenanceManager)"><img src="{{navigationImages.maintenanceManager}}" alt="" />Maintenance Manager</li>
+      <li (click)="navigate(navigationURL.reportManager)"><img src="{{navigationImages.reportManager}}" alt="" />Report Manager</li>
+    </ul>
+  </div>
+</div>
