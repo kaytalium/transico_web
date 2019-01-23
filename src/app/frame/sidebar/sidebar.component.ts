@@ -15,11 +15,11 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     // Image url links
     this.navigationImages = {
-      dashboard: '../../../assets/icons/baseline-dashboard-24px.svg',
-      reportManager: '../../../assets/icons/baseline-bar_chart-24px.svg',
-      scheduleManager: '../../../assets/icons/baseline-departure_board-24px.svg',
-      vehicleManager: '../../../assets/icons/baseline-directions_bus-24px.svg',
-      maintenanceManager: '../../../assets/icons/baseline-build-24px.svg',      
+      dashboard: 'dashboard',
+      reportManager: 'bar_chart',
+      scheduleManager: 'departure_board',
+      vehicleManager: 'directions_bus',
+      maintenanceManager: 'build',      
     }
 
     // navigation path

@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <mat-icon class="icon" (click)="openDrawer()">person</mat-icon>
+  <div class="content" [hidden]="isOpen">
+    <div class="center_content header ">
+      <avatar initials="RR"></avatar>
+      <div class="info_container">
+          <ul>
+            <li><b>Rolls Royce</b></li>
+            <li>rollsroyce@gmail.com</li>
+          </ul>
+      </div>
+    </div>
+    <div class="sub_content">
+      <ul>
+        <li class="center_content"><mat-icon>recent_actors</mat-icon> Switch Account</li>
+        <li class="center_content"><mat-icon>remove_from_queue</mat-icon> Lock Screen</li>
+        <li class="center_content"><mat-icon>exit_to_app</mat-icon> Sign out</li>
+      </ul>
+    </div>
+  </div>
+</div>

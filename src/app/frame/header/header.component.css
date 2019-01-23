@@ -33,11 +33,11 @@
 
 .notification_controls{
     height: 100%;
-    width: 20%;
+    width: 12%;
     float: right;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: right;
     margin-right: 20px;
-    background: purple;
+    /* background: purple; */
 }

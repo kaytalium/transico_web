@@ -1,0 +1,40 @@
+.wrapper{
+    height: 150px;
+    /* background: green; */
+}
+
+.avatar{
+    margin: 20px 20px 0 20px;
+    float: left;
+}
+
+.information{
+    float: left;
+    /* background: red; */
+    height: calc(100% - 29px);
+    width: calc(100% - 80px);
+    margin-top: 20px;
+}
+
+ul, li{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    height: 21px;
+    font-size: 14px;
+}
+
+
+
+.name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.time_lapse{
+    font-size: 12px;
+    color: #80808b;
+    margin-top: 10px;
+}
