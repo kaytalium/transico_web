@@ -13,7 +13,8 @@
     /* background: red; */
     height: calc(100% - 29px);
     width: calc(100% - 80px);
-    margin-top: 20px;
+    margin-top: 20px; 
+    font-size: 12px;
 }
 
 ul, li{
@@ -29,7 +30,7 @@ li{
 
 
 .name{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
 }
 

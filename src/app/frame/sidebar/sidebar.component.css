@@ -2,7 +2,9 @@
     height: 100%;
     width: 100%;
     background: #1d1d24;
-    color: antiquewhite;    
+    color: antiquewhite;  
+    overflow: hidden;  
+    position: relative;
 }
 
 .logo{
@@ -13,7 +15,7 @@
     justify-content: center;
     font-size: 2.0rem;
     font-weight: 300;
-    background: orange;
+    background: #f78a2b;
     float: left;
 }
 
@@ -34,7 +36,7 @@
 /* Navigation Links with icons */
 .navigation{
     width: 100%;
-    height: 100%;
+    height: auto;
     float: left;
     /* background: rgb(219, 143, 0); */
     
@@ -94,3 +96,12 @@
     color: rgba(236, 235, 235, 0.836);
 }
 
+.footer{
+    border-top: 1px solid #3333;
+    height: 50px;
+    background: #1d1d24;
+    width: 300px;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+}

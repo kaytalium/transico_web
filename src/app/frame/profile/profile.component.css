@@ -6,7 +6,7 @@
 
 .content{
     position: absolute;
-    width: 300px;
+    width: 280px;
     height: auto;
     right: 30px;
     top: 0;
@@ -22,9 +22,7 @@
     background: #e2dfdf;
     justify-content: left;
     padding-left: 10px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: bold;
+    font-size: 12px;
     box-shadow: 1px 0px 4px #80808b;
     overflow: hidden;
 }
@@ -56,6 +54,7 @@
     padding-left: 18px;
     justify-content: left;
     color: #6d6d6d;
+    font-size: 12px;
 }
 
 .sub_content li > mat-icon{
@@ -66,4 +65,14 @@
 .sub_content li:hover{
     background: #c3c3c5;
     color: #1b1b1b;
+}
+
+.name{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.email{
+    color: #80808b;
+    /* font-size: 12px; */
 }

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { FrameComponent } from './frame/frame.component';
 import { FrameRoutingModule } from './frame-routing.module';
@@ -13,13 +14,16 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatIconModule} from '@angular/material/icon';
 import { NotificationItemComponent } from './notification-item/notification-item.component';
 import { AvatarComponent } from './avatar/avatar.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [FrameComponent, HeaderComponent, SidebarComponent, UserSettingsComponent, SearchBarComponent, NotificationComponent, ProfileComponent, NotificationItemComponent, AvatarComponent],
+  declarations: [FrameComponent, HeaderComponent, SidebarComponent, UserSettingsComponent, SearchBarComponent, NotificationComponent, ProfileComponent, NotificationItemComponent, AvatarComponent, SearchResultComponent, FooterComponent],
   imports: [
     CommonModule,
     FrameRoutingModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   exports: [FrameRoutingModule]
 })

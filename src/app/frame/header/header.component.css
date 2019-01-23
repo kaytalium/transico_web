@@ -10,14 +10,14 @@
     width: 150px;
     /* background: green; */
     line-break: auto;
-    font-weight: 600;
+    font-weight: 500;
     padding-left: 15px;
     color: aliceblue;
     float: left;
     display: flex;
     align-items: center;
     justify-content: left;
-    border-right: 2px solid #44444d;
+    /* border-right: 2px solid #44444d; */
     float: left;
 }
 

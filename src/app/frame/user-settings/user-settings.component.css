@@ -3,12 +3,7 @@ padding: 15px;
 }
 
 .avatar{
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    border: 1px solid #3333;
-    background: red;
-    border-radius: 50%;
+   margin-top: 5px;
 }
 
 .info{
@@ -23,8 +18,8 @@ padding: 15px;
     justify-content: center;
 }
 .userType{
-font-weight: 800;
-font-size: 18px;
+font-weight: 500;
+font-size: 1.1rem;
 }
 
 .name{

@@ -1,0 +1,30 @@
+.wrapper{
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    color: #80808b;
+    font-size: 12px;
+    
+
+
+}
+
+.company{
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    /* background: red; */
+   
+}
+
+.c_style{
+    font-weight: 700;
+    margin-right: 5px;
+    color: #1e90ff;
+}
+
+.info{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}

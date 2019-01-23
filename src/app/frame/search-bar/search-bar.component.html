@@ -1,8 +1,27 @@
 <div class="wrapper">
-  <input type="text" name="search" id="search_bar" class="input_search">
-  <button type="submit" class="search_btn"></button>
+  <input type="text" name="search" id="search_bar" class="input_search" 
+  [(ngModel)]="searchInputText" (keyup)="searchFn($event)" >
+  <button type="submit" class="search_btn">
+    <mat-icon class="search_icon">search</mat-icon>
+  </button>
 
-  <div class="search_result">
-    
+
+</div>
+<div class="result_container">
+  <div class="search_result" [hidden]="!isOpen">
+    <ul>
+      <li><search-result></search-result></li>
+      <li><search-result></search-result></li>
+      <li><search-result></search-result></li>
+      <li><search-result></search-result></li>
+      <li><search-result></search-result></li>
+      <li><search-result></search-result></li>
+      <li><search-result></search-result></li>  
+    </ul>
+    <div class="footer">
+        <div class="total">Total of 18 items found</div>
+        <div class="vMore">View More</div>
+      </div>
   </div>
+ 
 </div>
