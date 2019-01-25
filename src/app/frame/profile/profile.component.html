@@ -2,20 +2,41 @@
   <mat-icon class="icon" (click)="openDrawer()">person</mat-icon>
   <div class="content" [hidden]="isOpen">
     <div class="center_content header ">
-      <avatar initials="RR"></avatar>
+      <avatar initials="RR" src="../../../assets/img/alexis.jpg"></avatar>
       <div class="info_container">
-          <ul>
-            <li class="name">Rolls Royce</li>
-            <li class="email">rollsroyce@gmail.com</li>
-          </ul>
+        <ul>
+          <li class="name">Alexis Ohanian</li>
+          <li class="email">alex.ohanian@gmail.com</li>
+        </ul>
       </div>
     </div>
     <div class="sub_content">
       <ul>
-        <li class="center_content"><mat-icon>recent_actors</mat-icon> Switch Account</li>
-        <li class="center_content"><mat-icon>remove_from_queue</mat-icon> Lock Screen</li>
-        <li class="center_content"><mat-icon>exit_to_app</mat-icon> Sign out</li>
+        <li class="center_content" (click)="navigate(route.switch)">
+          <mat-icon>recent_actors</mat-icon> Switch Account
+        </li>
+        <li class="center_content" (click)="navigate(route.lock)">
+          <mat-icon>remove_from_queue</mat-icon> Lock Screen
+        </li>
+        <li class="center_content" (click)="navigate(route.logout)">
+          <mat-icon>exit_to_app</mat-icon> Sign out
+        </li>
+      </ul>
+    </div>
+    <div class="sub_content">
+      <ul>
+        <li class="center_content" (click)="openSubMenu()">
+          <mat-icon>settings</mat-icon>Settings
+        </li>
+        <li class="center_content">
+          <mat-icon>help</mat-icon>Help
+        </li>
       </ul>
     </div>
   </div>
+
+  <!-- submenus -->
+  <div class="sub_menu" [hidden]="!isSettingDrawOpen">
+      <settings (close)="onClose($event)"></settings>
+    </div>
 </div>

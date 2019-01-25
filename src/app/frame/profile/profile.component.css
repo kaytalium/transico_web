@@ -42,6 +42,13 @@
     padding-top: 10px;
 }
 
+.sub_content{
+    /* height: auto; */
+    /* background: red; */
+    border-bottom: 1px solid #eaeaea;
+}
+
+
 .sub_content ul{
     cursor: pointer;
     overflow: hidden;
@@ -75,4 +82,16 @@
 .email{
     color: #80808b;
     /* font-size: 12px; */
+}
+
+
+.sub_menu{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 300px;
+    height: 400px;
+    background: #ffffff;    
+
+    box-shadow: 1px 1px 1px 1px #535355;
 }

@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="content top">
+    <div class="container ">
+      <div class="clock center_content">
+        2:31 PM
+      </div>
+      <div class="date center_content">
+        Thursday, January 24, 2019
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content bottom">
+      <div class="container center_content">
+        <div class="section center_content">Alexis Ohanian</div>
+        <div class="section">avatar</div>
+        <div class="section center_content">
+          <input type="password" name="" id="" class="input" placeholder="Password">
+          <button mat-button (click)="navigation(route.login)"><mat-icon>arrow_forward</mat-icon></button>
+        </div>
+      </div>
+
+      <div class="switch center_content" (click)="navigation(route.switch)">
+        Switch User
+      </div>
+  </div>
+
+  <div class="other_user">
+    <avatar initials="RR" src='../../../assets/img/alexis.jpg'></avatar>
+  </div>
+  <div class="other_name">James Blunt</div>
+</div>

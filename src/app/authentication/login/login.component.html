@@ -16,7 +16,7 @@
               <label>Password</label>
               <br>
               <div>
-                <button class="btn">Login</button>
+                <button class="btn" (click)="navigate(route.dashboard)">Login</button>
               </div>
               <!-- <div class="opt">
                   <button class="btn2">Forget Password</button>&nbsp;
@@ -25,8 +25,8 @@
             </div>
       </form> 
       <div class="opt">
-          <button class="btn2" (click)="navigate(1)">Forget Password</button>&nbsp;
-          <button class="btn2" (click)="navigate(0)">Create Account</button>
+          <button class="btn2" (click)="navigate(route.forget)">Forget Password</button>&nbsp;
+          <button class="btn2" (click)="navigate(route.signup)">Create Account</button>
       </div>
   </div>
   

@@ -17,7 +17,8 @@
     "paths": {
       "@authentication/*":["./src/app/authentication/*"],
       "@dashboard/*":["./src/app/dashboard/*"],
-      "@assets/*":["./src/assets/*"]
+      "@assets/*":["./src/assets/*"],
+      "@component/*":["./src/app/@component/*"]
     },
     "lib": [
       "es2018",

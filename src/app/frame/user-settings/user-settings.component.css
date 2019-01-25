@@ -19,7 +19,8 @@ padding: 15px;
 }
 .userType{
 font-weight: 500;
-font-size: 1.1rem;
+font-size: .8rem;
+color: #80808b;
 }
 
 .name{

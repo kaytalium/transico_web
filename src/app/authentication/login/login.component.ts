@@ -10,16 +10,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  private route: Array<string>
+  public route: object
   ngOnInit() {
-    this.route = [
-      "auth/signup",
-      "auth/forget_password"
-    ]
+    this.route = {
+      signup: "auth/signup",
+      forget: "auth/forget_password",
+      dashboard: "application"
+    }
   }
 
-  navigate = (path: number)=>{
-    this.router.navigateByUrl(this.route[path])
+  navigate = (path: string)=>{
+    this.router.navigateByUrl(path)
   }
 
 }

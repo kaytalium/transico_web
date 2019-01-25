@@ -1,0 +1,29 @@
+.wrapper{
+
+}
+
+.header{
+    height: 60px;
+    justify-content: left;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    background: #80808b;
+}
+
+mat-button{
+    margin-right: 15px;
+    
+}
+
+mat-icon{
+    color: #fff;
+}
+
+.content{
+    padding: 10px;
+    font-size: 14px;
+    color: #1D1D24;
+    text-align: center;
+}

@@ -4,6 +4,7 @@ import { LoginComponent } from '@authentication/login/login.component';
 import { SignUpComponent } from '@authentication/sign-up/sign-up.component';
 import { AuthenticationComponent } from '@authentication/authentication.component'
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { LockscreenComponent } from './lockscreen/lockscreen.component';
 
 
 const routes: Routes = [
@@ -23,8 +24,11 @@ const routes: Routes = [
         path: 'forget_password',
         component: ForgetPasswordComponent
       }
-
     ]
+  },
+  {
+    path: 'lock_screen',
+    component: LockscreenComponent
   }
 ];
 

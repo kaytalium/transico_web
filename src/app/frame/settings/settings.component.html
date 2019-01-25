@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="header center_content">
+      <button mat-button (click)="toggle()"> <mat-icon>arrow_back</mat-icon> </button> Change Password
+  </div>
+  <div class="content">
+    <p>To change password, enter the old password then type the new password.</p>
+    <form [formGroup]="myForm">
+      <!-- Old Password  -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter Old Password" type="password">
+      </mat-form-field>
+
+      <!-- New password -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter New Password" type="password" formControlName="password">
+        <mat-error *ngIf="myForm.hasError('required', 'password')">
+          Please enter your new password
+        </mat-error>
+      </mat-form-field>
+
+      <!-- retype New password -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Retype New Password" formControlName="confirmPassword" [errorStateMatcher]="matcher"
+          type="password">
+        <!-- <mat-hint>Please ensure that your password matches</mat-hint> -->
+        <mat-error *ngIf="myForm.hasError('notSame')">
+          Passwords do not match
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Submit buttons -->
+      <div class="example-full-width">
+      <button mat-button color="primary">Create Password</button>
+      </div>
+
+    </form>
+  </div>
+</div>

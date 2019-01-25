@@ -6,7 +6,7 @@ import { FrameComponent } from './frame/frame.component';
 const routes: Routes = [
   {
     path: '', component: FrameComponent
-   
+
   }
 ];
 
