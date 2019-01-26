@@ -1,9 +1,28 @@
 <div class="wrapper">
-    <!-- <div class="test"></div> -->
-      <h4>TRANSICO</h4>
-      <h1>WELCOME BACK</h1>
-      <form>
-        <div class="group">
+  <div class="top-row">
+    <span>Don't have an account </span><button mat-stroked-button (click)="navigate(route.signup)">Create Account</button>
+  </div>
+  <div class="title">Log into Transico</div>
+  <div class="sub-title">Enter your logon details below</div>
+
+  <!-- form group -->
+  <form [formGroup]="myForm" class="form">
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter username" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter Password" formControlName="confirmPassword" [errorStateMatcher]="matcher" type="password">
+      <mat-hint>Password must be 7 characters or longer</mat-hint>
+    </mat-form-field>
+
+    <!-- Submit buttons -->
+    <div class="example-full-width">
+      <button mat-raised-button color="primary" (click)="navigate(route.dashboard)">Sign in</button>
+    </div>
+
+    <!-- <div class="group">
           <input type="text" required> 
           <span class="highlight"></span>
           <span class="bar"></span>
@@ -18,15 +37,11 @@
               <div>
                 <button class="btn" (click)="navigate(route.dashboard)">Login</button>
               </div>
-              <!-- <div class="opt">
-                  <button class="btn2">Forget Password</button>&nbsp;
-                  <button class="btn2">Create Account</button>
-              </div>-->
-            </div>
-      </form> 
-      <div class="opt">
-          <button class="btn2" (click)="navigate(route.forget)">Forget Password</button>&nbsp;
-          <button class="btn2" (click)="navigate(route.signup)">Create Account</button>
-      </div>
+              
+            </div> -->
+  </form>
+  <div class="opt">
+    <button mat-raised-button (click)="navigate(route.forget)">Forget Password</button>
   </div>
-  
+</div>
+<button>Basic</button>

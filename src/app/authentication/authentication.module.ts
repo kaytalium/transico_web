@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 //Material Design links
 import {MatIconModule} from '@angular/material/icon';
@@ -8,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 
 import { AvatarModule } from '@component/avatar'
+import { SecondaryUsersModule } from '@component/secondary-users'
+import { ClockModule } from "@component/clock"
 
 import { AuthenticationComponent } from '@authentication/authentication.component';
 import { AuthRoutingModule } from '@authentication/auth-routing.module'
@@ -33,7 +36,11 @@ import { LockscreenComponent } from './lockscreen/lockscreen.component';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    AvatarModule
+    AvatarModule,
+    SecondaryUsersModule,
+    ClockModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[AuthRoutingModule]
 })

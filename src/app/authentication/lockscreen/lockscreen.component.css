@@ -53,13 +53,13 @@
 .section:nth-child(2){
     width: 180px;
     height: 180px;
-    background: orange;
+    
 
     border-radius: 50%;
     border: 8px solid #fff;
-    background: url('../../../assets/img/alexis.jpg');
-    background-position: cover;
-    background-size: auto 100%;
+   
+    /* background-position: cover;
+    background-size: auto 100%; */
 
 }
 
@@ -71,10 +71,7 @@
     border: none;
 }
 
-.clock{
-    font-size: 8em;
-    font-weight: 300;
-}
+
 
 .switch{
     width: 100%;
@@ -86,23 +83,17 @@
 
 .other_user{
     
+    height: auto;
+    width: 200px;
+    /* background: red; */
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: 25px;
+}
+
+.other_user ul>li{
     height: 50px;
-    width: 50px;
-   
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    cursor: pointer;
 }
 
-.other_name{
-    position: fixed;
-    bottom: 25px;
-    left: 70px;
-    color: #fff;
-    visibility: hidden;
-}
 
-.other_user:hover ~.other_name{
-    visibility: visible;
-}

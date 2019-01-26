@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Raleway:600');
 /* You can add global styles to this file, and also import other style files */
-body{
+html, body{
     margin: 0px;
     padding: 0;
     height: 100vh;
     background-color: #1d1d24;
-}
-html, body { height: 100%; }
-body { 
-    margin: 0; 
+    overflow: hidden;
+
     font-family: Roboto, sans-serif; 
     /* font-family: 'Raleway', sans-serif; */
     /* font-family: 'Montserrat', sans-serif; */

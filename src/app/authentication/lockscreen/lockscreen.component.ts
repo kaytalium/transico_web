@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class LockscreenComponent implements OnInit {
 
   route: object
+  additionalUsers: object;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -16,6 +17,20 @@ export class LockscreenComponent implements OnInit {
       login: 'application',
       switch: 'auth/login'
     }
+
+    this.additionalUsers = [
+      {
+        username:"Jimmy Fallon",
+        image: '../../../assets/img/jimmy.jpg',
+        initials: "JF"
+      },
+      {
+        username:"Kaley Cuoco",
+        image: '../../../assets/img/kaley.jpg',
+        initials: "KC"
+      }
+
+    ]
   }
 
   navigation(path: string) {
