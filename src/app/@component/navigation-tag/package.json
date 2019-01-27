@@ -1,0 +1,11 @@
+{
+  "name": "navigation-tag",
+  "version": "1.0.0",
+  "description": "Small component that will allow the user to see the breadcumbs of the current Navigation and more",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ovel Heslop",
+  "license": "MIT"
+}

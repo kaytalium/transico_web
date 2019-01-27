@@ -23,9 +23,12 @@
 
 .search{
     float: left;
-    width: 400px;
-    margin-left: 10px;
+    width: 450px;
+    margin-left: 50px;
     height: 100%;
+    /* background: red; */
+    /* overflow: hidden; */
+
     display: flex;
     align-items: center;
     justify-content: left;

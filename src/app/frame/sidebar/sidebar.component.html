@@ -13,20 +13,8 @@
   <!-- navigation links and icons -->
   <div class="navigation">
     <ul>
-      <li class="active" title="Transico Dashboard" (click)="navigate(navigationURL.dashboard)">
-        <mat-icon>{{navigationImages.dashboard}}</mat-icon>Dashboard
-      </li>
-      <li (click)="navigate(navigationURL.scheduleManager)">
-        <mat-icon>{{navigationImages.scheduleManager}}</mat-icon>Schedule Manager
-      </li>
-      <li (click)="navigate(navigationURL.vehicleManager)">
-        <mat-icon>{{navigationImages.vehicleManager}}</mat-icon>Vehicle Manager
-      </li>
-      <li (click)="navigate(navigationURL.maintenanceManager)">
-        <mat-icon>{{navigationImages.maintenanceManager}}</mat-icon>Maintenance Manager
-      </li>
-      <li (click)="navigate(navigationURL.reportManager)">
-        <mat-icon>{{navigationImages.reportManager}}</mat-icon>Report Manager
+      <li *ngFor="let nav of navigation" class="{{nav.status}}" title="{{nav.title}}" (click)="navigate(nav.position)">
+        <mat-icon>{{nav.icon}}</mat-icon>{{nav.value}}
       </li>
     </ul>
   </div>

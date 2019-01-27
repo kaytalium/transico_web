@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { nodeValue } from '@angular/core/src/view';
 
 @Component({
   selector: 'sidebar',
@@ -10,31 +11,81 @@ export class SidebarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  navigationImages: Object
-  navigationURL: Object
-  ngOnInit() {
-    // Image url links
-    this.navigationImages = {
-      dashboard: 'dashboard',
-      reportManager: 'bar_chart',
-      scheduleManager: 'departure_board',
-      vehicleManager: 'directions_bus',
-      maintenanceManager: 'build',      
-    }
+  navigation: Array<Navigation> = []
 
-    // navigation path
-    this.navigationURL = {
-      dashboard: "application/dashboard",
-      reportManager: "application/report_manager",
-      scheduleManager: "application/schedule_manager",
-      vehicleManager: "application/vehicle_manager",
-      maintenanceManager: "application/maintenance_manager"
-    }
+  ngOnInit() {
+   
+    // navigation path for Dashboard
+    this.navigation.push({
+      value: "Dashboard",
+      path: "application/dashboard",
+      status: "active",
+      title: "Transico Dashboard",
+      icon: "dashboard",
+      position: 0
+    })
+
+    // navigation path for Schedule Manager
+    this.navigation.push({
+      value: "Schedule Manager",
+      path: "application/schedule_manager",
+      status: "",
+      title: "Scheduling",
+      icon: "departure_board",
+      position: 1
+    })
+
+    // navigation path for vehicle_manager
+    this.navigation.push({
+      value: "Vehicle Manager",
+      path: "application/vehicle_manager",
+      status: "",
+      title: "Vehicle",
+      icon: "directions_bus",
+      position: 2
+    })
+
+    // navigation path for maintenance_manager
+    this.navigation.push({
+      value: "Maintenance Manager",
+      path: "application/maintenance_manager",
+      status: "",
+      title: "Maintanance",
+      icon: "build",
+      position: 3
+    })
+
+    // navigation path for report_manager
+    this.navigation.push({
+      value: "Report Manager",
+      path: "application/report_manager",
+      status: "",
+      title: "Report",
+      icon: "bar_chart",
+      position: 4
+    })
+
   }
 
   // Navigation function that will route user to module based on link
-  navigate = (url: string)=>{
-      this.router.navigateByUrl(url);
+  navigate = (position: number) => {
+
+    this.navigation.forEach((nav: Navigation) => {
+      nav.status = "";
+    })
+
+    this.router.navigateByUrl(this.navigation[position].path);
+    this.navigation[position].status = "active"
+
   }
 
+}
+
+export interface Navigation {
+  value?: string,
+  path?: string,
+  status?: string,
+  title?: string,
+  icon?: string,
+  position: number
 }

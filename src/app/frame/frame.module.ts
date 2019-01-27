@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 //Custom Component links
 import { AvatarModule } from "@component/avatar";
+import { NavigationTagModule } from '@component/navigation-tag'
 
 // Application Module Links
 import { DashboardModule } from '@application/dashboard'
@@ -59,6 +60,7 @@ import { SettingsComponent } from './settings/settings.component';
     ReactiveFormsModule,
     MatButtonModule,
     AvatarModule,
+    NavigationTagModule,
     DashboardModule,
     ScheduleManagerModule,
     VehicleManagerModule,
