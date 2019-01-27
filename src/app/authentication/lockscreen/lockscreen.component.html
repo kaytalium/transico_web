@@ -25,12 +25,11 @@
     </div>
   </div>
 
-
   <!-- Mini avatar view of other users that are currently logged in to the current browser -->
   <div class="other_user">
     <ul>
       <li *ngFor="let user of additionalUsers">
-        <secondary-users src="{{user.image}}" username="{{user.username}}"></secondary-users>
+        <secondary-users [userObject]="user"></secondary-users>
       </li>
     </ul>   
   </div>

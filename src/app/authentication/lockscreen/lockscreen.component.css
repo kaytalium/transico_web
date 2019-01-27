@@ -81,10 +81,9 @@
     cursor: pointer;
 }
 
-.other_user{
-    
+.other_user{    
     height: auto;
-    width: 200px;
+    width: 122px;
     /* background: red; */
     position: fixed;
     bottom: 0px;

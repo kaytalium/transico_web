@@ -1,11 +1,11 @@
 .wrapper{
     background-color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
     width: 80%;
     height: 500px;
     margin: 5% auto 0 auto;
     overflow: hidden;
+    position: relative;
 } 
 
 .content{
@@ -23,9 +23,18 @@
 } 
 
 .tint{
+    background: black;
+    opacity: .8;
     position: relative;
     height: 100%;
-    width: 100%;
-    background: black;
-    opacity: .80;
 } 
+
+.team{
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size: 9px;
+    color: #212122;
+    
+    
+}

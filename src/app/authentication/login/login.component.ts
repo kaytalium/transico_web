@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { UserObject } from '@component/interface';
+import { User } from '@component/User.class';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -21,6 +23,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
 
+  additionalUsers: Array<UserObject> = []
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.myForm = this.formBuilder.group({
@@ -39,14 +42,38 @@ export class LoginComponent implements OnInit {
       forget: "auth/forget_password",
       dashboard: "application"
     }
+
+    this.additionalUsers.push(
+      new User({
+        username: "Alexis Ohanian",
+        imageSrc: '../../../assets/img/alexis.jpg',
+        initials: "KC",
+        status: true
+      }));
+
+    this.additionalUsers.push(
+      new User({
+        username: "Jimmy Fallon",
+        imageSrc: '../../../assets/img/jimmy.jpg',
+        initials: "JF",
+        status: false
+      }));
+
+    this.additionalUsers.push(
+      new User({
+        username: "Kaley Cuoco",
+        imageSrc: '../../../assets/img/kaley.jpg',
+        initials: "KC",
+        status: false
+      }));
   }
 
-  navigate = (path: string)=>{
+  navigate = (path: string) => {
     this.router.navigateByUrl(path)
   }
 
-  checkPasswords(group: FormGroup){
-    
+  checkPasswords(group: FormGroup) {
+
   }
 
 }

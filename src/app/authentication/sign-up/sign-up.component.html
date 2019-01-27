@@ -1,43 +1,42 @@
 <div class="wrapper">
-    <!-- <div class="test"></div> -->
-    <div class="content">
-      <h4>TRANSICO</h4>
-      <h1>Create Account</h1>
-      <div class="line"></div>
-  
-      <form class="bs">
-        <div class="group">
-          <input type="text" required> 
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          <label>Your Name</label>
-        </div> 
-  
-        <div class="group">      
-            <input type="text" required>
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>Email</label>
-          </div>
-  
-          <div class="group">      
-              <input type="password" required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Password</label>
-            </div>
-  
-            <div class="group">      
-                <input type="password" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Re-Type Pasword</label><br>
-              </div>
-            <div class="btn">Sign Up</div>
-      </form> 
-      <div class="opt">
-          <h5>Already Have An Account?</h5>
-          <div class="btn2" (click)="navigate()">LOGIN</div> 
-        </div>
-    </div>
+  <div class="header">
+    <div class="company_name">transico <div class="tm"></div></div>
+    <h1>Create an account</h1>
   </div>
+  
+  
+
+  <div class="section">
+    <form class="form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Your Name" type="text">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" type="email">
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" type="password">
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Re-Type Password" type="password">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">Sign Up</button>
+    </form>
+  </div>
+
+   <div class="section">
+      <div class="line"></div>
+    <h5 class="info center_content">Already Have An Account?</h5>
+    <div class="center_content">
+      <button mat-raised-button (click)="navigate()">LOGIN</button>
+    </div>    
+  </div>
+
+<version color="dark"></version>
+</div>

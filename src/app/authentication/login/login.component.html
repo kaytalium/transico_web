@@ -1,6 +1,15 @@
 <div class="wrapper">
   <div class="top-row">
-    <span>Don't have an account </span><button mat-stroked-button (click)="navigate(route.signup)">Create Account</button>
+    <span>Don't have an account </span><button mat-stroked-button (click)="navigate(route.signup)" class="create">Create Account</button>
+  </div>
+  
+  <div class="active-users">
+      <!-- <div class="active-users-title">Active Users</div> -->
+    <ul>
+      <li *ngFor="let user of additionalUsers">
+        <secondary-users [userObject]="user"  displayName="bottom"></secondary-users>
+      </li>
+    </ul>
   </div>
   <div class="title">Log into Transico</div>
   <div class="sub-title">Enter your logon details below</div>
@@ -14,7 +23,7 @@
 
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Enter Password" formControlName="confirmPassword" [errorStateMatcher]="matcher" type="password">
-      <mat-hint>Password must be 7 characters or longer</mat-hint>
+      <mat-hint>Password must be at least 7 characters or longer</mat-hint>
     </mat-form-field>
 
     <!-- Submit buttons -->
@@ -22,26 +31,12 @@
       <button mat-raised-button color="primary" (click)="navigate(route.dashboard)">Sign in</button>
     </div>
 
-    <!-- <div class="group">
-          <input type="text" required> 
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          <label>UserName</label>
-        </div> 
-          <div class="group">      
-              <input type="password" required>
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Password</label>
-              <br>
-              <div>
-                <button class="btn" (click)="navigate(route.dashboard)">Login</button>
-              </div>
-              
-            </div> -->
   </form>
   <div class="opt">
     <button mat-raised-button (click)="navigate(route.forget)">Forget Password</button>
   </div>
+
+  
+    <version color="dark"></version>
+  
 </div>
-<button>Basic</button>

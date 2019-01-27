@@ -1,0 +1,16 @@
+.wrapper{
+    color: #fff;
+    font-size: 9px;
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.white{
+    color:#fff;
+}
+
+.dark{
+    color:rgb(15, 15, 15);
+}

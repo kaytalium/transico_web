@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserObject } from '@component/interface';
+import { User } from '@component/User.class';
 
 @Component({
   selector: 'lockscreen',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 export class LockscreenComponent implements OnInit {
 
   route: object
-  additionalUsers: object;
+  additionalUsers: Array<User>;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -19,16 +21,19 @@ export class LockscreenComponent implements OnInit {
     }
 
     this.additionalUsers = [
-      {
+      new User({
         username:"Jimmy Fallon",
-        image: '../../../assets/img/jimmy.jpg',
-        initials: "JF"
-      },
-      {
+        imageSrc: '../../../assets/img/jimmy.jpg',
+        initials: "JF",
+        status: false
+      }),
+        
+     new User({
         username:"Kaley Cuoco",
-        image: '../../../assets/img/kaley.jpg',
-        initials: "KC"
-      }
+        imageSrc: '../../../assets/img/kaley.jpg',
+        initials: "KC",
+        status: false
+      })
 
     ]
   }

@@ -1,4 +1,8 @@
-<div class="wrapper">
-  <avatar src="{{src}}" initials="{{initials}}"></avatar>
-  <div class="name">{{username}}</div>
+<div class="wrapper" #main_container title={{userObject.username}}>
+  <div class="avatar_container {{align}}">
+    <avatar src="{{userObject.imageSrc}}" initials="{{userObject.initials}}" size="{{size}}" title={{userObject.username}}></avatar>
+    <div class="active_user" [hidden]="!isActive"></div>
+  </div>
+  <div class="name {{displayName}}" >{{userObject.username}}</div>
 </div>
+
