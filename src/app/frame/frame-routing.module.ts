@@ -2,10 +2,40 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FrameComponent } from './frame/frame.component';
 
+// children module components
+import { DashboardComponent } from '@application/dashboard';
+import { ScheduleManagerComponent } from '@application/schedule-manager';
+import { VehicleManagerComponent } from '@application/vehicle-manager';
+import { MaintenanceManagerComponent } from '@application/maintenance-manager';
+import { ReportManagerComponent } from '@application/report-manager';
+
 
 const routes: Routes = [
   {
-    path: '', component: FrameComponent
+    path: '', component: FrameComponent,
+    children:[
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'schedule_manager',
+        component: ScheduleManagerComponent
+      },
+      {
+        path: 'vehicle_manager',
+        component: VehicleManagerComponent
+      },
+      {
+        path: 'maintenance_manager',
+        component: MaintenanceManagerComponent
+      },
+      {
+        path: 'report_manager',
+        component: ReportManagerComponent
+      },
+    ]
 
   }
 ];

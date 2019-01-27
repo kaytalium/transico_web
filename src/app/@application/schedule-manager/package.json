@@ -1,0 +1,11 @@
+{
+  "name": "schedule-manager",
+  "version": "1.0.0",
+  "description": "Standalone application that is part of the transico application to manage the assignment of route, buses, drivers and inspectors within the organization",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ovel Heslop",
+  "license": "MIT"
+}

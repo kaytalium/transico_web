@@ -1,0 +1,11 @@
+{
+  "name": "maintenance-manager",
+  "version": "1.0.0",
+  "description": "This module is created to be part of the Transico Web Application ",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ovel Heslop",
+  "license": "MIT"
+}

@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
     // navigation path
     this.navigationURL = {
       dashboard: "application/dashboard",
-      reportManager: "application/report",
+      reportManager: "application/report_manager",
       scheduleManager: "application/schedule_manager",
       vehicleManager: "application/vehicle_manager",
       maintenanceManager: "application/maintenance_manager"
