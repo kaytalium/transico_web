@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 //Custom Component links
 import { AvatarModule } from "@component/avatar";
@@ -59,6 +60,7 @@ import { SettingsComponent } from './settings/settings.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatProgressBarModule,
     AvatarModule,
     NavigationTagModule,
     DashboardModule,
