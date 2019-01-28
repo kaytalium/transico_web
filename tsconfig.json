@@ -18,6 +18,7 @@
       "@authentication/*":["./src/app/authentication/*"],
       "@assets/*":["./src/assets/*"],
       "@env/*":["./src/environments/*"],
+      "@src/*":["./src/*"],
       "@component/*":["./src/app/@component/*"],
       "@application/*":["./src/app/@application/*"]
     },
