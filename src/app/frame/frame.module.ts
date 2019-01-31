@@ -35,6 +35,7 @@ import { NotificationItemComponent } from './notification-item/notification-item
 import { SearchResultComponent } from './search-result/search-result.component';
 import { FooterComponent } from './footer/footer.component';
 import { SettingsComponent } from './settings/settings.component';
+import { LogoModule } from '../@component/logo';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { SettingsComponent } from './settings/settings.component';
     ScheduleManagerModule,
     VehicleManagerModule,
     MaintenanceManagerModule,
-    ReportManagerModule
+    ReportManagerModule,
+    LogoModule
   
   ],
   exports: [FrameRoutingModule]
