@@ -56,9 +56,9 @@ export class LockscreenAvatarComponent implements OnInit {
   private checkPassword(password: string){
     this.validate = this.passwordValidator.validate(password)
     if(this.validate.isError){
-        this.passwordEl.nativeElement.style.setProperty('border', 'visible')
+        this.message.nativeElement.style.setProperty('visibility', 'visible')
     }else{
-      this.passwordEl.nativeElement.style.setProperty('visibility', 'hidden')
+      this.message.nativeElement.style.setProperty('visibility', 'hidden')
     } 
   }
    
