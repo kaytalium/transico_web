@@ -73,7 +73,8 @@ h1{
 .info{
     margin-top: 80px;
 } 
-  .line{
+
+.line{
       height: 350px;
       width: 2px;
       float: left;
@@ -101,3 +102,7 @@ h1{
       width: 100px;
       margin: auto;
   }
+
+.logo{
+    
+}

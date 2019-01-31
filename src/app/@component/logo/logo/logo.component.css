@@ -1,9 +1,13 @@
+.wrapper{
+    position: relative;
+    width: 90px;
+    
+}
 .company_name{
     width: auto;
     text-transform: capitalize;
     font-size: 24px;
     font-weight: 500;
-    /* background: red; */
 }
 
 .tm{
