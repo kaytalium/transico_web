@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { User } from '../../User.class';
-import { Router } from '@angular/router';
-import { isError } from 'util';
+import { PasswordValidator } from '@helper/helper';
+import { Validate } from '@src/app/@helper/PasswordValidator';
 
 @Component({
   selector: 'lockscreen-avatar',
@@ -19,14 +19,14 @@ export class LockscreenAvatarComponent implements OnInit {
    
   //validation error
   error: string 
-  isError: boolean = false
+  validate:Validate ={}
   
   
   @ViewChild('passwordEl') passwordEl: ElementRef;
   @ViewChild('message') message: ElementRef;
 
   
-  constructor() { }
+  constructor(private passwordValidator: PasswordValidator) { }
 
   ngOnInit() {}
 
@@ -41,7 +41,7 @@ export class LockscreenAvatarComponent implements OnInit {
     //The check will set the isError if no error kthen set password and export user object
     this.checkPassword(password)
 
-    if(!this.isError){
+    if(!this.validate.isError){
       this.user.password = password
       this.onClick.emit(this.user)
       // console.log("This is the class password: "+this.user.password)
@@ -54,21 +54,13 @@ export class LockscreenAvatarComponent implements OnInit {
   }
 
   private checkPassword(password: string){
-    
-    // console.log(password.length)
-    if(password.length > 7 ){
-      this.message.nativeElement.style.setProperty('visibility', 'hidden')
-      this.isError = false
-    }else if(password.length > 0 && password.length < 7){
-      this.error = "Password must be at least 8 characters"
-      this.message.nativeElement.style.setProperty('visibility', 'visible')
-      this.isError = true
-    }else if(password.length == 0){
-      this.message.nativeElement.style.setProperty('visibility', 'visible')
-      this.error = "Please provide a password"
-      this.isError = true
-    }
-    // console.log('this is keyboard event: '+password)
+    this.validate = this.passwordValidator.validate(password)
+    if(this.validate.isError){
+        this.passwordEl.nativeElement.style.setProperty('border', 'visible')
+    }else{
+      this.passwordEl.nativeElement.style.setProperty('visibility', 'hidden')
+    } 
   }
+   
 
 }

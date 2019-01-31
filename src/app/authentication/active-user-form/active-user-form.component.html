@@ -6,12 +6,13 @@
 
   <div class="name center_content">{{userData.username}}</div>
 
-  <div class="input center_content">
+  <div class="input center_content {{errorClass}}">
     <div class="example-full-width ">
-      <input placeholder="Enter password" type="password" >
+      <input placeholder="Enter password" type="password" #passwordEl  (keyup)="onKey($event)">
     </div>
   </div>
+  <div class="hint center_content">{{validate.message}}</div>
   <div class="example-full-width center_content btn">
-      <button mat-raised-button (click)="navigate()">Login</button>
+      <button mat-raised-button (click)="onLogin()">Login</button>
     </div>
 </div>

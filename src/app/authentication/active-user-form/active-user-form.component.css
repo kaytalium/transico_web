@@ -27,6 +27,14 @@ background: #00359c; */
     /* background: #04b7e9; */
 }
 
+.error{
+    border: 1px solid #ff0000;
+}
+
+.success{
+    border: 1px solid #1e90ff;
+}
+
 .example-full-width{
     width: 100%;
 }
@@ -58,4 +66,10 @@ input[type="password"]{
 .mat-raised-button{
     background-color: #1d1d24;
     color: #eaeaea;
+}
+
+.hint{
+    font-size: 12px;
+    margin-top: 5px;
+    color: red;
 }
