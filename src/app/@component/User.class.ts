@@ -4,7 +4,8 @@ export class User {
     public imageSrc: string
     public initials: string
     public username: string
-   public status: boolean;
+    public status: boolean;
+    public password: string;
 
     constructor(userData: UserObject){
 

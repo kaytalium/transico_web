@@ -1,4 +1,16 @@
 <div class="wrapper">
+  <div class="product_name">
+    <div class="left">
+      <logo color="primary"></logo>
+    </div>
+
+    <div class="right">
+      <company-name color="primary"></company-name>
+    </div>
+
+
+  </div>
+
   <!-- large clock to display time and date -->
   <div class="content top">
     <clock></clock>
@@ -6,21 +18,10 @@
 
   <!-- Active user information and access section -->
   <div class="content bottom">
-    <div class="container center_content">
-      <div class="section center_content">Alexis Ohanian</div>
-      <div class="section">
-        <avatar size="180" src="../../../assets/img/alexis.jpg"></avatar>
-      </div>
-      <div class="section center_content">
-        <input type="password" name="" id="" class="input" placeholder="Password">
-        <button mat-button (click)="navigation(route.login)">
-          <mat-icon>arrow_forward</mat-icon>
-        </button>
-      </div>
-    </div>
+    <lockscreen-avatar [user]="activeUser" (onClick)="authenticate($event)"></lockscreen-avatar>
 
     <!-- Switch user  button if none of the logged in user is not you -->
-    <div class="switch center_content" (click)="navigation(route.switch)">
+    <div class="switch center_content" (click)="navigation(route.login)">
       Switch User
     </div>
   </div>
@@ -28,10 +29,10 @@
   <!-- Mini avatar view of other users that are currently logged in to the current browser -->
   <div class="other_user">
     <ul>
-      <li *ngFor="let user of additionalUsers">
-        <secondary-users [userObject]="user"></secondary-users>
+      <li *ngFor="let user of users">
+        <secondary-users [userObject]="user"  (userClick)="onAdditionalUserClick($event)"></secondary-users>
       </li>
-    </ul>   
+    </ul>
   </div>
   <version></version>
 </div>

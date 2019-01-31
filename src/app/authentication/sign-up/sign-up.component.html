@@ -1,6 +1,9 @@
 <div class="wrapper">
   <div class="header">
-    <div class="company_name">transico <div class="tm"></div></div>
+    <div class="logo">
+      <logo></logo>
+    </div>
+
     <h1>Create an account</h1>
   </div>
   
@@ -8,6 +11,18 @@
 
   <div class="section">
     <form class="form">
+
+        <mat-form-field class="example-full-width">
+            <mat-select placeholder="Position" [formControl]="positionControl" required>
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let job of jobs" [value]="job">
+                {{job.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="positionControl.hasError('required')">Please choose a job position</mat-error>
+            <mat-hint>{{positionControl.value?.hint}}</mat-hint>
+          </mat-form-field>
+
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Your Name" type="text">
       </mat-form-field>
@@ -26,15 +41,15 @@
         <input matInput placeholder="Re-Type Password" type="password">
       </mat-form-field>
 
-      <button mat-raised-button color="primary">Sign Up</button>
+      <button mat-raised-button class="'sys-accent'" >Sign Up</button>
     </form>
   </div>
 
    <div class="section">
-      <div class="line"></div>
+      <div class="line sys-accent"></div>
     <h5 class="info center_content">Already Have An Account?</h5>
-    <div class="center_content">
-      <button mat-raised-button (click)="navigate()">LOGIN</button>
+    <div class="center_content btn_login">
+      <button mat-button (click)="backToLogin()">Login</button>
     </div>    
   </div>
 

@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 
 @Component({
   selector: 'avatar',
   templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.css']
+  styleUrls: ['./avatar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvatarComponent implements OnInit {
 
@@ -17,20 +18,16 @@ export class AvatarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-
-
-
-
-    // console.log("outside of if: "+this.src+" and initials are: "+this.initials)
-
-
-
+    this.init()
   }
 
-  ngAfterViewInit() {
+  ngOnChanges() {
+    this.init()
+  }
+
+  init() {
     let fontSize: number
-    
+
     if (this.size) {
       this.elem.nativeElement.style.setProperty('width', this.size + "px");
       this.elem.nativeElement.style.setProperty('height', this.size + "px");
@@ -50,8 +47,7 @@ export class AvatarComponent implements OnInit {
       this.elem.nativeElement.style.setProperty('font-size', fontSize + "px");
     }
 
+
   }
-
-
 
 }

@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="close"><button mat-fab [color]="'terminate'" (click)="onClose()"><mat-icon>close</mat-icon></button></div>
+  <div class="avatar center_content">
+    <avatar src="{{userData.imageSrc}}" size="120"></avatar>
+  </div>
+
+  <div class="name center_content">{{userData.username}}</div>
+
+  <div class="input center_content">
+    <div class="example-full-width ">
+      <input placeholder="Enter password" type="password" >
+    </div>
+  </div>
+  <div class="example-full-width center_content btn">
+      <button mat-raised-button (click)="navigate()">Login</button>
+    </div>
+</div>

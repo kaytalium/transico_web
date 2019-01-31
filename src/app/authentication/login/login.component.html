@@ -1,42 +1,20 @@
-<div class="wrapper">
-  <div class="top-row">
-    <span>Don't have an account </span><button mat-stroked-button (click)="navigate(route.signup)" class="create">Create Account</button>
-  </div>
+<div class="wrapper"> 
   
+  <div class="content">
+    <user-login *ngIf='isLogin'></user-login>
+    <active-user-form *ngIf="!isLogin" (close)="switch($event)" [userData]="activeUserData"></active-user-form>
+  </div>
+
   <div class="active-users">
-      <!-- <div class="active-users-title">Active Users</div> -->
     <ul>
-      <li *ngFor="let user of additionalUsers">
-        <secondary-users [userObject]="user"  displayName="bottom"></secondary-users>
+      <li *ngFor="let user of additionalUsers.getUserList()">
+        <secondary-users [userObject]="user" displayName="bottom" (userClick)="secondaryUserClick($event)"></secondary-users>
       </li>
     </ul>
   </div>
-  <div class="title">Log into Transico</div>
-  <div class="sub-title">Enter your logon details below</div>
-
-  <!-- form group -->
-  <form [formGroup]="myForm" class="form">
-
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Enter username" type="text">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Enter Password" formControlName="confirmPassword" [errorStateMatcher]="matcher" type="password">
-      <mat-hint>Password must be at least 7 characters or longer</mat-hint>
-    </mat-form-field>
-
-    <!-- Submit buttons -->
-    <div class="example-full-width">
-      <button mat-raised-button color="primary" (click)="navigate(route.dashboard)">Sign in</button>
-    </div>
-
-  </form>
-  <div class="opt">
-    <button mat-raised-button (click)="navigate(route.forget)">Forget Password</button>
-  </div>
 
   
-    <version color="dark"></version>
-  
+
+  <version color="dark"></version>
+
 </div>

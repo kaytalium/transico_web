@@ -1,0 +1,11 @@
+{
+  "name": "helper",
+  "version": "1.0.0",
+  "description": "Application helper classes ",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ovel K. Heslop <kayheslop@gmail.com>",
+  "license": "MIT"
+}

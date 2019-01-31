@@ -1,0 +1,34 @@
+<div class="wrapper">
+<div class="top-row">
+    <span>Don't have an account </span><button mat-stroked-button (click)="navigate(route.signup)" class="create">Create
+      Account</button>
+  </div>
+
+  <div class="title">Log into Transico</div>
+  <div class="sub-title">Enter your logon details below</div>
+
+ <!-- form group -->
+ <form [formGroup]="myForm" class="form">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter username" type="text">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter Password" formControlName="confirmPassword" [errorStateMatcher]="matcher" type="password">
+    <mat-hint>Password must be at least 8 characters or longer</mat-hint>
+  </mat-form-field>
+
+  <!-- Submit buttons -->
+  <div class="example-full-width">
+    <button mat-raised-button color="primary" (click)="navigate(route.application)">Login</button>
+  </div>
+
+  <div class="example-full-width">
+      <div class="btn_forget" (click)="navigate(route.forget)">Forget Password</div>
+    </div>
+
+</form>
+
+
+</div>

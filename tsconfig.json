@@ -20,7 +20,8 @@
       "@env/*":["./src/environments/*"],
       "@src/*":["./src/*"],
       "@component/*":["./src/app/@component/*"],
-      "@application/*":["./src/app/@application/*"]
+      "@application/*":["./src/app/@application/*"],
+      "@helper/*":["./src/app/@helper/*"]
     },
     "lib": [
       "es2018",

@@ -5,33 +5,16 @@
     padding: 0;
 }
 
-.company_name{
-    width: 110px;
-    margin-top: 50px;
-    padding-left: 40px;
-    text-transform: capitalize;
-    font-size: 24px;
-    position: relative;
-    font-weight: 500;
-}
-
-.tm{
-    font-size: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.tm::after{
-    content: 'TM'
-}
-
-
-
 .header{
     width: 100%;
     /* background: #5264AE; */
-    height: 80px;
+    height: 80px;   
+}
+
+.header > .logo{
+    margin-top: 50px;
+    color: #1e90ff;
+    margin-left: 30px;
 }
 
 .section{
@@ -40,6 +23,7 @@
     float: left;
     /* background: blue; */
     overflow: hidden;
+    
 }
 
 
@@ -76,6 +60,14 @@ h1{
 
 .example-full-width{
     width: 85%;
+    /* background: red; */
+    border-bottom: 1px sold #fff;
+    margin-top: 4px;
+}
+
+.example-full-width:first-child{
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
 
 .info{
@@ -84,11 +76,16 @@ h1{
   .line{
       height: 350px;
       width: 2px;
-      background-color: crimson;
       float: left;
       margin: auto;
       position: relative;
+      background-color: #1e90ff;
   }
+
+.mat-raised-button{
+    background-color: #1e90ff!important;
+    color: aliceblue;
+}
 
   .opt h5{
       text-align: center;
@@ -96,4 +93,11 @@ h1{
       color: #80808b;
       font-weight: normal;
       margin-top: 68%;
+  }
+
+  .btn_login{
+      border: 1px solid #80808b;
+      border-radius: 25px;
+      width: 100px;
+      margin: auto;
   }

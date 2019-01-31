@@ -1,4 +1,4 @@
-<div class="wrapper" #main_container title={{userObject.username}}>
+<div class="wrapper" #main_container title={{userObject.username}} (click)="onClick()">
   <div class="avatar_container {{align}}">
     <avatar src="{{userObject.imageSrc}}" initials="{{userObject.initials}}" size="{{size}}" title={{userObject.username}}></avatar>
     <div class="active_user" [hidden]="!isActive"></div>

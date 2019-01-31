@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="container center_content">
+    <div class="section center_content">{{user.username}}</div>
+    <div class="section">
+      <avatar size="180" src="{{user.imageSrc}}"></avatar>
+    </div>
+    <div class="section center_content">
+      <div class="message" #message>
+        {{error}}
+      <div class="arrow-down"></div>
+      </div>
+      <input type="password" name="" id="" class="input" placeholder="Password" #passwordEl (keyup)="onKey($event)">
+      <button mat-button (click)="navigation()">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -7,68 +7,19 @@
 .content{
     height: 50%;
     width: 100%;
-    /* background: red; */
+   
     position: relative;
 }
 
 .top{
     color: #fff;
-    padding-top: 80px;
+    padding-top: 150px;
+    height: 30%;
+     /* background: purple; */
 }
 
 .bottom{
     /* background: purple; */
-}
-
-.container{
-    width: 600px;
-    height: 40%;
-    margin: -10px auto 0 auto;
-    /* background: #fff; */
-    
-}
-
-.section{
-    width: 210px;
-    height: 40px;
-    float: left;
-    background: #fff;
-    overflow: hidden;
-    border: 1px solid #fff;
-
-}
-
-.section:nth-child(1){
-    margin-right: -2px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-}
-
-.section:nth-child(3){
-    margin-left: -2px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.section:nth-child(2){
-    width: 180px;
-    height: 180px;
-    
-
-    border-radius: 50%;
-    border: 8px solid #fff;
-   
-    /* background-position: cover;
-    background-size: auto 100%; */
-
-}
-
-.input{
-    margin-left: 15px;
-    width: 130px;
-    height: 50%;
-    outline: none;
-    border: none;
 }
 
 
@@ -93,6 +44,33 @@
 
 .other_user ul>li{
     height: 50px;
+}
+
+/* Product name and coopany name styles */
+.product_name{
+    /* background: red; */
+    position: relative;
+    padding: 0 40px 0 40px;
+}
+
+.left, .right{
+    position: absolute;
+    width: auto;
+    top: 60px;
+    
+}
+
+.left{
+left: 0;
+/* background: purple; */
+left: 40px;
+}
+
+.right{
+    right: 0;
+    /* background: green; */
+    right: 40px;
+    
 }
 
 

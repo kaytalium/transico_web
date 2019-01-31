@@ -4,4 +4,5 @@ export interface UserObject {
     username?: string
     active?: boolean;
     status:boolean;
+    password?:string
 }
