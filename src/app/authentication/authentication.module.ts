@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 //System Component links
 import { AvatarModule } from '@component/avatar'
@@ -27,6 +28,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { ActiveUserFormComponent } from './active-user-form/active-user-form.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { ForgetPasswordDialogPopupComponent } from './forget-password-dialog-popup/forget-password-dialog-popup.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     ForgetPasswordComponent,
     LockscreenComponent,
     ActiveUserFormComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    ForgetPasswordDialogPopupComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +50,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
+    MatDialogModule,
     AvatarModule,
     VersionModule,
     LogoModule,
@@ -56,6 +60,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     ReactiveFormsModule,
     
   ],
+  entryComponents:[ForgetPasswordDialogPopupComponent],
   exports:[AuthRoutingModule],
 })
 export class AuthenticationModule { }

@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { ForgetPasswordDialogPopupComponent } from '@authentication/forget-password-dialog-popup/forget-password-dialog-popup.component';
+
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-forget-password',
@@ -8,7 +16,10 @@ import { Router } from '@angular/router';
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  animal: string;
+  name: string;
+
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -20,8 +31,20 @@ export class ForgetPasswordComponent implements OnInit {
   /**
    * Function to create and reset password
    */
-  create = ()=>{
+  create = ()=>{}
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ForgetPasswordDialogPopupComponent, {
+      width: '400px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 
 }
+
+
