@@ -18,10 +18,12 @@
       "@authentication/*":["./src/app/authentication/*"],
       "@assets/*":["./src/assets/*"],
       "@env/*":["./src/environments/*"],
+      "@helper/*":["./src/app/@helper/*"],
       "@src/*":["./src/*"],
+      "@directive/*":["./src/app/@directive/*"],
       "@component/*":["./src/app/@component/*"],
       "@application/*":["./src/app/@application/*"],
-      "@helper/*":["./src/app/@helper/*"]
+      
     },
     "lib": [
       "es2018",

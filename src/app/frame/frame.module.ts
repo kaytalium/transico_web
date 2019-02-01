@@ -21,6 +21,8 @@ import { VehicleManagerModule } from '@application/vehicle-manager'
 import { MaintenanceManagerModule } from '@application/maintenance-manager'
 import { ReportManagerModule } from '@application/report-manager'
 
+import { DirectivesModule } from '../@directive/directives';
+
 
 //Components
 import { FrameComponent } from './frame/frame.component';
@@ -36,6 +38,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { FooterComponent } from './footer/footer.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LogoModule } from '../@component/logo';
+
 
 
 @NgModule({
@@ -69,8 +72,8 @@ import { LogoModule } from '../@component/logo';
     VehicleManagerModule,
     MaintenanceManagerModule,
     ReportManagerModule,
-    LogoModule
-  
+    LogoModule,
+    DirectivesModule  
   ],
   exports: [FrameRoutingModule]
 })

@@ -8,7 +8,9 @@
     <search-bar></search-bar>
   </div>
   <div class="notification_controls">
-    <notification></notification>
-    <profile></profile>
+      <notification clickoutside ></notification>
+    <profile clickOutside  outsideClick="{{opened}}" (clickOutside)="isOpen($event)" ></profile>
   </div>
+  
+
 </div>

@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'profile',
+  selector: 'profile', 
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
 
+  @Input() outsideClick: boolean = false
   isOpen: boolean;
   isSettingDrawOpen: boolean;
   route: object;
-  constructor(public router: Router) { }
+  constructor(public router: Router) { 
+    
+  }
 
   ngOnInit() {
     this.isOpen = true;
@@ -22,12 +25,37 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  ngOnChanges(){
+
+    // console.log("This is isOpen is drawer before changes: "+this.isOpen)
+    // console.log("This is outsideClick before changes: "+this.outsideClick)
+
+    
+    if(this.outsideClick){
+      this.isOpen = true
+      // console.log("inside if: "+this.isOpen)
+    }
+    
+    // if(!this.isOpen && this.outsideClick){
+    //   console.log("inside if: "+this.isOpen)
+    //   this.isOpen = true
+    // }
+    // this.openDrawer()
+    // this.isOpen = this.outsideClick
+    
+    // console.log("This is isOpen is drawer after changes: "+this.isOpen)
+
+  }
+
+
   openDrawer() {
     if (this.isSettingDrawOpen) {
       this.isSettingDrawOpen = false
-    } else {
+    }     
+    else {      
       this.isOpen = !this.isOpen
     }
+    // console.log("Inside drawer logics isOpen states: "+this.isOpen)
 
   }
 
