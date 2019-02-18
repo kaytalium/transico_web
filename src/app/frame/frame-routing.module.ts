@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: '', component: FrameComponent,
     children:[
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'schedule_manager', pathMatch: 'full' },
       {
         path: 'dashboard',
         component: DashboardComponent

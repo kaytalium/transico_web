@@ -11,7 +11,7 @@
     right: 30px;
     top: 0;
     background: rgb(253, 253, 253);
-
+    z-index: 9999999999;
     /* Shadow  */
     box-shadow: 1px 1px 1px 1px #cccaca7a;
     
@@ -46,6 +46,7 @@
     /* height: auto; */
     /* background: red; */
     border-bottom: 1px solid #eaeaea;
+   
 }
 
 
@@ -92,6 +93,6 @@
     width: 300px;
     height: 400px;
     background: #ffffff;    
-
+    z-index: 999999999;
     box-shadow: 1px 1px 1px 1px #535355;
 }

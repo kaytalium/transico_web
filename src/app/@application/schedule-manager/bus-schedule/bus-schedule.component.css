@@ -1,0 +1,25 @@
+.wrapper{
+  /* background: red; */
+  height: 21% ;
+  overflow: hidden;
+  position: relative;
+}
+.example-container {
+    height: 88%;
+    overflow: auto;
+    /* position: relative; */
+  }
+  
+  table {
+    width: 100%;
+  }
+
+.center{
+      padding-left: 40px; 
+}
+
+.fbutton{
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  }

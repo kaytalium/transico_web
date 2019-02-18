@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <mat-form-field>
+    <mat-select placeholder="Select View Period">
+      <mat-option *ngFor="let period of periods" [value]="period.value">
+        {{period.periodValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+</div>

@@ -16,6 +16,7 @@
     ],
     "paths": {
       "@authentication/*":["./src/app/authentication/*"],
+      "@material/*":["./src/app/@material/*"],
       "@assets/*":["./src/assets/*"],
       "@env/*":["./src/environments/*"],
       "@helper/*":["./src/app/@helper/*"],
