@@ -17,4 +17,19 @@ import { Injectable } from '@angular/core';
  */
 export class Session {
 
+    public setSession:Map<string,string>
+
+    /**
+     * start a session if one is not started
+     */
+    public start(): void{
+
+    }
+
+    /**
+     * stop session 
+     */
+    public destroy(){
+
+    }
 }

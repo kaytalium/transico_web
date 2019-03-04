@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
+// Firebase modules 
+import { AngularFireModule } from '@angular/fire'
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { config } from "./configure"
 
 
 //Material Design links
@@ -29,6 +34,7 @@ import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { ActiveUserFormComponent } from './active-user-form/active-user-form.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ForgetPasswordDialogPopupComponent } from './forget-password-dialog-popup/forget-password-dialog-popup.component';
+
 
 @NgModule({
   declarations: [
@@ -58,9 +64,12 @@ import { ForgetPasswordDialogPopupComponent } from './forget-password-dialog-pop
     ClockModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    AngularFireModule.initializeApp(config.firebase,"transico-app"),
+    AngularFirestoreModule.enablePersistence(),   
+    AngularFireAuthModule 
   ],
   entryComponents:[ForgetPasswordDialogPopupComponent],
   exports:[AuthRoutingModule],
+  providers:[AngularFirestore ]
 })
 export class AuthenticationModule { }

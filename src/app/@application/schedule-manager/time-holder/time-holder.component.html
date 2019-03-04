@@ -1,0 +1,25 @@
+<div class="wrapp">
+  <mat-form-field>
+    <mat-select placeholder="Hours">
+      <mat-option *ngFor="let time of time.hours" [value]="time.value">
+        {{time.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+:
+  <mat-form-field>
+    <mat-select placeholder="Minutes" [formControl]="selected" >
+      <mat-option *ngFor="let time of time.minutes" [value]="time.value">
+        {{time.viewValue}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
+  </mat-form-field>
+:
+  <mat-form-field>
+    <mat-select placeholder="AM/PM">
+      <mat-option value="AM">AM</mat-option>
+      <mat-option value="PM">PM</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

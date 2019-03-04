@@ -1,0 +1,13 @@
+.wrapper{
+   /* background: red;  */
+  
+   padding-top: 15px;
+   padding-left: 20px;
+}
+
+.list{
+    /* background: purple; */
+    font-size: 14px;
+    width: 150px;
+
+}

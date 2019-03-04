@@ -3,6 +3,7 @@ import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBui
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { RoutePath } from '@src/app/@helper/helper';
+import { DatabaseConnect } from '@authentication/DatabaseConnect';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -25,7 +26,7 @@ export class UserLoginComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private route: RoutePath) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private route: RoutePath, private database: DatabaseConnect) {
     this.myForm = this.formBuilder.group({
       password: ['', [Validators.required]],
       confirmPassword: ['']

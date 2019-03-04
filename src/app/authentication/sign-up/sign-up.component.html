@@ -10,38 +10,52 @@
   
 
   <div class="section">
-    <form class="form">
+    <form class="form" [formGroup]="signUpForm" autocomplete="off" novalidate 
+    (ngSubmit)="registerNewUser(signUpForm.value)" >
 
         <mat-form-field class="example-full-width">
-            <mat-select placeholder="Position" [formControl]="positionControl" required>
+            <mat-select placeholder="Position" formControlName="position" #position>
               <mat-option>--</mat-option>
               <mat-option *ngFor="let job of jobs" [value]="job">
                 {{job.name}}
               </mat-option>
             </mat-select>
-            <mat-error *ngIf="positionControl.hasError('required')">Please choose a job position</mat-error>
-            <mat-hint>{{positionControl.value?.hint}}</mat-hint>
+            <mat-error>Please choose a job position</mat-error>
+            <mat-hint>
+              <div *ngIf="!position.value?.hint">
+                Select user type
+              </div>
+              {{position.value?.hint}}
+            </mat-hint>
+           
           </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Your Name" type="text">
+        <input matInput placeholder="Your Full Name" type="text" formControlName="name">
+        <mat-error>Your Full name is Required</mat-error>
+        <mat-hint>Jane Doe</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email" type="email">
+        <input matInput placeholder="Email address" type="email" formControlName="email"  >
+        <mat-hint>Example: jane.doe@emaple.com</mat-hint>
+        <mat-error >Please provide a valid email</mat-error>
       </mat-form-field>
 
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Password" type="password">
+        <input matInput placeholder="Password" type="password" formControlName="password">
+        <mat-hint>Make it strong: Capital Letter, Alpha numeric, lowercase and digits</mat-hint>
+        <mat-error >Please provide a password</mat-error>
       </mat-form-field>
 
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Re-Type Password" type="password">
+        <input matInput placeholder="Re-Type Password" type="password" formControlName="retype_password">
+        <mat-hint>Make sure password matches</mat-hint>
       </mat-form-field>
 
-      <button mat-raised-button class="'sys-accent'" >Sign Up</button>
+      <button mat-raised-button class="'sys-accent'" [disabled]="!signUpForm.valid" >Sign Up</button>
     </form>
   </div>
 

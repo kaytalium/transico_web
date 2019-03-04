@@ -8,6 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HelperModule, RoutePath, ActiveUserLog } from '@helper/helper';
 
 
+//Firebase connection
+import { AngularFireModule } from '@angular/fire'
+import { environment } from "../environments/environment"
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -18,7 +22,9 @@ import { HelperModule, RoutePath, ActiveUserLog } from '@helper/helper';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HelperModule
+    HelperModule,
+    AngularFireModule.initializeApp(environment.firebase,"transico-app"),
+    AngularFirestoreModule
   ],
   providers: [RoutePath, ActiveUserLog],
   bootstrap: [AppComponent]

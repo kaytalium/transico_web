@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
+import {MatDialog} from '@angular/material';
+import { DriverAssignmentComponent } from '../driver-assignment/driver-assignment.component';
 
 
 @Component({
@@ -13,12 +15,23 @@ export class BusScheduleComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA)
 
   @ViewChild(MatSort) sort: MatSort
-  constructor() { 
+  constructor(public dialog: MatDialog) { 
     
   }
 
   ngOnInit() {
     this.dataSource.sort = this.sort
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DriverAssignmentComponent, {
+      width: '800px',
+      height:'600px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

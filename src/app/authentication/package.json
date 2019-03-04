@@ -1,0 +1,8 @@
+{
+    "name": "authentication",
+    "version": "1.0.0",
+    "dependencies": {
+        "@angular/fire": "^5.1.1",
+        "firebase": "^5.8.4"
+    }
+}

@@ -1,3 +1,4 @@
+
 {
   "name": "schedule-manager",
   "version": "1.0.0",
@@ -7,5 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ovel Heslop",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@angular/fire": "^5.1.1",
+    "angularfire2": "^5.1.1",
+    "firebase": "^5.8.4"
+  }
 }
