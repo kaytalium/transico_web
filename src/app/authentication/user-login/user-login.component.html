@@ -8,20 +8,20 @@
   <div class="sub-title">Enter your logon details below</div>
 
  <!-- form group -->
- <form [formGroup]="myForm" class="form">
+ <form [formGroup]="myForm" class="form" (ngSubmit)="login(myForm.value)">
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Enter username" type="text">
+    <input matInput placeholder="Enter username" type="email" formControlName="username">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Enter Password" formControlName="confirmPassword" [errorStateMatcher]="matcher" type="password">
+    <input matInput placeholder="Enter Password" formControlName="password" type="password">
     <mat-hint>Password must be at least 8 characters or longer</mat-hint>
   </mat-form-field>
 
   <!-- Submit buttons -->
   <div class="example-full-width">
-    <button mat-raised-button color="primary" (click)="navigate(route.application)">Login</button>
+    <button mat-raised-button color="primary" [disabled]="!myForm.valid">Login</button>
   </div>
 
   <div class="example-full-width">

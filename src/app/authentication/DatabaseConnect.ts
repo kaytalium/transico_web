@@ -43,12 +43,7 @@ export class DatabaseConnect{
 
   // Sign in with email/password
   SignIn(email, password) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
-         this.router.navigate(['<!-- enter your route name here -->']);
-      }).catch((error) => {
-        window.alert(error.message)
-      })
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);      
   }
 
   /**

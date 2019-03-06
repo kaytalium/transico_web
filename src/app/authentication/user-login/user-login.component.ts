@@ -4,6 +4,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { RoutePath } from '@src/app/@helper/helper';
 import { DatabaseConnect } from '@authentication/DatabaseConnect';
+import { database } from 'firebase';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,19 +19,20 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: 'user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  styleUrls: ['./user-login.component.css'],
+  providers:[DatabaseConnect]
 })
 export class UserLoginComponent implements OnInit {
 
   myForm: FormGroup
-  matcher = new MyErrorStateMatcher();
+  
   
 
   constructor(private router: Router, private formBuilder: FormBuilder, private route: RoutePath, private database: DatabaseConnect) {
     this.myForm = this.formBuilder.group({
-      password: ['', [Validators.required]],
-      confirmPassword: ['']
-    }, { validator: this.checkPasswords });
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]],
+      username: ['', [Validators.required, Validators.email]]
+     });
 
   }
 
@@ -40,8 +42,15 @@ export class UserLoginComponent implements OnInit {
     this.router.navigateByUrl(path)
   }
 
-  checkPasswords(group: FormGroup) {
-
+  login(formValues){
+    if(this.myForm.valid){
+      this.database.SignIn(formValues.username,formValues.password)
+      .then((result) => {
+        this.router.navigateByUrl(this.route.application);
+     }).catch((error) => {
+       window.alert(error.message)
+     })
+    }
   }
 
 }
