@@ -8,6 +8,11 @@ import {MaterialModule} from '@material/material/material.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DriverAssignmentComponent } from './driver-assignment/driver-assignment.component';
 import { TimeHolderComponent } from './time-holder/time-holder.component'
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { config } from '@authentication/configure';
+import { MatCardModule } from '@angular/material';
 
 
 @NgModule({
@@ -17,7 +22,11 @@ import { TimeHolderComponent } from './time-holder/time-holder.component'
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(config.firebase),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
+    MatCardModule
    
   ],
   exports:[

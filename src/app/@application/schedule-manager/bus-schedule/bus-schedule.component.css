@@ -1,7 +1,7 @@
 .wrapper{
   /* background: red; */
-  height: 21% ;
-  overflow: hidden;
+  height: 100% ;
+  /* overflow: hidden; */
   position: relative;
 }
 .example-container {

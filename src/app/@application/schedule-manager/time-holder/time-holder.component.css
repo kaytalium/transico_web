@@ -1,4 +1,44 @@
+.wrapper{
+    height: 70px;
+    /* background: red; */
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
 mat-form-field{
     margin-left: 5px;
-    width: 50px;
+    width: auto;
+}
+
+mat-card{
+    margin-top: 20px;
+}
+
+.block{
+    display: inline-block;
+    width: auto;
+    padding: 5px;
+    height: 100%;
+    /* background: red; */
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+.block > label{
+    width: 100%;
+    clear: both;
+    /* font-weight: bold; */
+    font-size: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Status  */
+.status, .model{
+    background: blue;
+    /* color: aliceblue; */
+    margin-top: -20px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
 }

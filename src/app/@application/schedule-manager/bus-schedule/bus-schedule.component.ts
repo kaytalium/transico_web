@@ -2,30 +2,47 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import {MatDialog} from '@angular/material';
 import { DriverAssignmentComponent } from '../driver-assignment/driver-assignment.component';
+import { DriverSchedule } from '../classes/driver-schedule';
+import { SchedulingProcessorService } from '../scheduling-processor.service';
+import { DriverScheduleObj, DriverScheduleDataTableColumns } from '../classes/system-interface';
+
 
 
 @Component({
   selector: 'bus-schedule',
   templateUrl: './bus-schedule.component.html',
-  styleUrls: ['./bus-schedule.component.css']
+  styleUrls: ['./bus-schedule.component.css'],
+  providers:[SchedulingProcessorService]
 })
 export class BusScheduleComponent implements OnInit {
 
+  driverSchedule: DriverSchedule = new DriverSchedule()
+  collectionOfSchedules: Array<DriverSchedule>
+
   displayedColumns = ['date', 'busId', 'routeNumber', 'routeDescription', 'driverName', 'duration','assignedBy','action'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA)
+  dataSource: MatTableDataSource<DriverScheduleDataTableColumns>
 
   @ViewChild(MatSort) sort: MatSort
-  constructor(public dialog: MatDialog) { 
+
+  constructor(public dialog: MatDialog, private driverScheduleService: SchedulingProcessorService) { 
+    driverScheduleService.get().subscribe((ds:DriverScheduleObj[])=>{
+      this.driverSchedule.setCollection(ds)
+      // console.log(ds)
+      this.dataSource = new MatTableDataSource(this.driverSchedule.getCollection()) 
+      this.dataSource.sort = this.sort
+    })
+
+   
     
   }
 
   ngOnInit() {
-    this.dataSource.sort = this.sort
+    
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DriverAssignmentComponent, {
-      width: '800px',
+      width: '1000px',
       height:'600px'
     });
 

@@ -4,12 +4,12 @@
     <p><b>Date:</b> {{today|date:'fullDate'}}</p>
     <div class="row">
         <mat-form-field>
-            <mat-select placeholder="Driver" [formControl]="selected" [errorStateMatcher]="matcher">
+            <mat-select placeholder="Inpesctors" [formControl]="selected" [errorStateMatcher]="matcher">
               <mat-option value="valid">Susan White</mat-option>
               <mat-option value="valid">John Brown</mat-option>
               <mat-option value="valid">Winston Black </mat-option>
             </mat-select>
-            <mat-hint>Driver Name</mat-hint>
+            <mat-hint>Inspector Group</mat-hint>
             <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
             <mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
               Your selection is invalid
@@ -17,8 +17,13 @@
           </mat-form-field>
     </div>
 
-    <div class="row">
+    <div class="row content">
       <time-holder></time-holder>
+      <time-holder></time-holder>
+      <time-holder></time-holder>
+      <time-holder></time-holder>
+      <time-holder></time-holder>
+
     </div>
   </div>
   <div mat-dialog-actions class="footer">
