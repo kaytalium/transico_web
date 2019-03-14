@@ -1,33 +1,60 @@
 <div class="wrapper">
-  <h1 mat-dialog-title>Add New Record </h1>
+  <div class="title">
+    <div class="back_icon">
+      <button mat-button title="Back to Schedules" (click)="onBackClick()">
+        <mat-icon>arrow_back</mat-icon>
+      </button> Driver Schedule
+    </div>
+  </div>
+  <h1 mat-dialog-title>Create Schedule</h1>
+  <hr />
   <div mat-dialog-content>
-    <p><b>Date:</b> {{today|date:'fullDate'}}</p>
-    <div class="row">
+
+    <div class="row control">
+      <p>Select Route from the list to assign and assign available Bus to driver</p>
+      <div class="list box">
         <mat-form-field>
-            <mat-select placeholder="Inpesctors" [formControl]="selected" [errorStateMatcher]="matcher">
-              <mat-option value="valid">Susan White</mat-option>
-              <mat-option value="valid">John Brown</mat-option>
-              <mat-option value="valid">Winston Black </mat-option>
-            </mat-select>
-            <mat-hint>Inspector Group</mat-hint>
-            <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
-            <mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
-              Your selection is invalid
-            </mat-error>
-          </mat-form-field>
+          <mat-select placeholder="Routes" [formControl]="selected" [(ngModel)]="selectedValue"
+          (ngModelChange)="OnSelectChange()" [errorStateMatcher]="matcher">
+            <mat-option *ngFor="let routeNumber of routeNumbers" [value]="routeNumber.value">{{routeNumber.viewValue}}</mat-option>
+           
+          </mat-select>
+          <mat-hint>Route List</mat-hint>
+          <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
+          <mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
+            Your selection is invalid
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="description box">
+        <div class="heading">
+          {{originAndDestination}} <mat-icon>compare_arrows</mat-icon>
+        </div>
+        <div class="via_routes">
+          <ul>
+            <li *ngFor="let via of routesVia">{{via}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="availability box">
+          <div class="heading">Bus Assignment to Route</div>
+        <div class="block">
+            <div class="name">Total assignment to route</div><div class="result">{{busRouteAssignmentStats?.status?.total}}</div>
+        </div>
+        <div class="block">
+            <div class="name">Total running</div><div class="result">{{busRouteAssignmentStats?.status?.assign}}</div>
+        </div>
+        <div class="block">
+            <div class="name">Available</div><div class="result">{{busRouteAssignmentStats.status?.unassign}}</div>
+        </div>
+      </div>
+
     </div>
 
     <div class="row content">
-      <time-holder></time-holder>
-      <time-holder></time-holder>
-      <time-holder></time-holder>
-      <time-holder></time-holder>
-      <time-holder></time-holder>
-
+      <bus-holder *ngFor="let bus of buses" [busDetail]="bus"></bus-holder>
     </div>
-  </div>
-  <div mat-dialog-actions class="footer">
-      <button mat-raised-button color="primary">Create</button>
-    <button mat-button (click)="onNoClick()">Cancel</button>
   </div>
 </div>

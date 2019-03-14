@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TimeHolderComponent } from './time-holder.component';
+import { BusHolderComponent } from './bus-holder.component';
 
 describe('TimeHolderComponent', () => {
-  let component: TimeHolderComponent;
-  let fixture: ComponentFixture<TimeHolderComponent>;
+  let component: BusHolderComponent;
+  let fixture: ComponentFixture<BusHolderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TimeHolderComponent ]
+      declarations: [ BusHolderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TimeHolderComponent);
+    fixture = TestBed.createComponent(BusHolderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

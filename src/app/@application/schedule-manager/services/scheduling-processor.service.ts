@@ -1,10 +1,10 @@
 import { Injectable, Query } from '@angular/core';
-import { DriverScheduleObj } from './classes/system-interface';
+import { DriverScheduleObj } from '../classes/system-interface';
 import { Observable } from 'rxjs';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class SchedulingProcessorService {

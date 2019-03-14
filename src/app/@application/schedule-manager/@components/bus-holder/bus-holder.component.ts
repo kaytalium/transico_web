@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { BusDetail } from '../../classes/bus-route-assignment';
 
 @Component({
-  selector: 'time-holder',
-  templateUrl: './time-holder.component.html',
-  styleUrls: ['./time-holder.component.css']
+  selector: 'bus-holder',
+  templateUrl: './bus-holder.component.html',
+  styleUrls: ['./bus-holder.component.css']
 })
-export class TimeHolderComponent implements OnInit {
+export class BusHolderComponent implements OnInit {
 
+  @Input() busDetail: BusDetail
   timer = new Timer();
   time = {
     hours: [],
@@ -24,6 +26,8 @@ export class TimeHolderComponent implements OnInit {
   ngOnInit() {
     this.time.hours = this.timer.getHours()
     this.time.minutes = this.timer.getMinutes();
+
+    console.log("Bus Detail Information passed to component: "+this.busDetail.info.busModel)
   }
 
 }
@@ -33,7 +37,7 @@ export class Timer {
     let hours = []
     for (let i = 1; i < 13; i++) {
       hours.push({ value: i, viewValue: i })
-      console.log("this is I: " + i)
+      // console.log("this is I: " + i)
     }
     return hours
   }
@@ -43,7 +47,7 @@ export class Timer {
     for (let i = 0; i < 60; i++) {
       minutes.push({ value: i, viewValue: this.doubleDigits(i) })
     }
-    console.log("Minutes"+minutes)
+    // console.log("Minutes"+minutes)
     return minutes;
   }
 

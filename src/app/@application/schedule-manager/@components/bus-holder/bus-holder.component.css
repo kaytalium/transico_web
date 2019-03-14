@@ -5,6 +5,21 @@
     padding: 3px;
 }
 
+/* gride layout */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    /* background-color: #2196F3; */
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1px solid rgba(94, 90, 90, 0.356); */
+    padding: 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+
 mat-form-field{
     margin-left: 5px;
     width: auto;
@@ -35,10 +50,30 @@ mat-card{
 
 /* Status  */
 .status, .model{
-    background: blue;
+    /* background: blue; */
     /* color: aliceblue; */
-    margin-top: -20px;
+    /* margin-top: -20px; */
     border-radius: 5px;
     width: 100%;
     text-align: left;
+    padding: 5px;
+    position: relative;
+}
+
+.placeholder{
+    cursor: pointer;
+    
+}
+
+.placeholder:hover{
+    color: black;
+}
+
+.inactive{
+    color: rgb(167, 161, 161);
+}
+
+.terminal{
+    
+    font-size: 11px;
 }

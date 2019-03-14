@@ -4,7 +4,6 @@ import { FrameComponent } from './frame/frame.component';
 
 // children module components
 import { DashboardComponent } from '@application/dashboard';
-import { ScheduleManagerComponent } from '@application/schedule-manager';
 import { VehicleManagerComponent } from '@application/vehicle-manager';
 import { MaintenanceManagerComponent } from '@application/maintenance-manager';
 import { ReportManagerComponent } from '@application/report-manager';
@@ -21,7 +20,7 @@ const routes: Routes = [
       },
       {
         path: 'schedule_manager',
-        component: ScheduleManagerComponent
+        loadChildren: '../@application/schedule-manager/schedule-manager.module#ScheduleManagerModule'
       },
       {
         path: 'vehicle_manager',

@@ -1,0 +1,16 @@
+.wrapper{
+    /* background: purple; */
+    /* height: 81vh; */
+    /* overflow: hidden; */
+    position: relative;
+  }
+
+  table {
+    width: 100%;
+  }
+
+.fbutton{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    }

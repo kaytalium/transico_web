@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <h1 mat-dialog-title>Inventory Management - (Adding a new bus)</h1>
+  <div mat-dialog-content>
+    <p>This form allow you to add a new bus to the Fleet. </p>
+    <p>Please note that you cannot add a bus that is already added with the same <b>Model Number</b></p>
+    <hr>
+    <div class="content">
+        <form class="example-form">
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item"> <!-- Bus Model -->
+                  <mat-form-field class="example-form-field">
+                      <input matInput type="text" placeholder="Bus Model Number" [(ngModel)]="value">
+                      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                      <mat-hint>E.g. 7 character long value 23N4534</mat-hint>
+                    </mat-form-field>
+        </div>
+                <div class="grid-item"> <!-- Bus Depot -->
+                  <mat-form-field class="example-form-field">
+                      <input matInput type="text" placeholder="Bus Depot">
+                      <button mat-button ></button>
+                      <mat-hint>E.g. Lyndust Road</mat-hint>
+                    </mat-form-field>
+        </div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">7</div>
+                <div class="grid-item">8</div>
+                <div class="grid-item">9</div>
+              </div>
+         
+
+            
+          </form>
+    </div>
+  </div>
+  <div class="footer">
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button color="primary" cdkFocusInitial>Add</button>
+    </div>
+  </div>
+</div>

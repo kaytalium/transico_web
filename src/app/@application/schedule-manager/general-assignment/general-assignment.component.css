@@ -1,0 +1,24 @@
+.wrapper{
+
+
+}
+.button_group{
+    margin-top: 15px;
+    /* background: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_widget{
+    width: 200px;
+    height: 100px;
+    background: red;
+    float: left;
+    margin-right: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

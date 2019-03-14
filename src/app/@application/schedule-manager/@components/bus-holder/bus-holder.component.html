@@ -1,0 +1,59 @@
+<mat-card>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <!-- Bus model id -->
+      <div class="block">
+        <label>Bus Model</label>
+        <div class="model">{{busDetail.modelNumber}}</div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <!-- Assignment Status  -->
+      <div class="block">
+        <label>Status</label>
+        <div class="status">{{busDetail.status}}</div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <!-- Inspectors Assigned  -->
+      <div class="block">
+        <label>Inspectors Assign</label>
+        <div class="status">{{busDetail.inspector1.name}}<div class="terminal" title="Half Way Tree">[{{busDetail.inspector1.locationCode}}]</div></div>
+        <div class="status">{{busDetail.inspector2.name}}<div class="terminal" title="Downtown Kingston">[{{busDetail.inspector2.locationCode}}]</div></div>
+      </div>
+
+    </div>
+    <div class="grid-item">
+      <!-- Start Time -->
+      <div class="block">
+        <label>Start Time</label>
+        <div class="placeholder inactive">5:00 AM</div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <!-- End Time -->
+      <div class="block">
+        <label>End Time</label>
+        <div class="placeholder inactive">9:00 AM</div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <!-- Driver -->
+      <div class="block">
+        <!-- <label>Driver</label> -->
+        <mat-form-field>
+          <mat-select placeholder="Driver">
+            <mat-option value="AM">David East</mat-option>
+            <mat-option value="PM">Shaun Grunt</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</mat-card>

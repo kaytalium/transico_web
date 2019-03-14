@@ -20,4 +20,15 @@ export class RoutePath {
     public signup: string =  "auth/signup"
     
     public forget: string = "auth/forget_password"
+
+
+    // route Schedule Manager
+    public scheduleManagerSchedules = 'application/schedule_manager/schedules'
+
+    public scheduleManagerAssignment = 'application/schedule_manager/assignments'
+    
+    public scheduleManagerDriverAssignment = 'application/schedule_manager/driver_assignment'
+
+    public scheduleManagerDriverSchedule = 'application/schedule_manager/driver_schedule'
+
 }

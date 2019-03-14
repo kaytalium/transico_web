@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <!-- <bus-schedule-control></bus-schedule-control> -->
+
+  <div class="example-container mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- Date Column -->
+        <ng-container matColumnDef="modelNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Model Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.modelNumber}} </td>
+        </ng-container>
+    
+        <!-- Bus ID Column -->
+        <ng-container matColumnDef="depot">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Depot</th>
+          <td mat-cell *matCellDef="let element"> {{element.depot}} </td>
+        </ng-container>
+    
+        <!-- Route Number Column -->
+        <ng-container matColumnDef="routeNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Route Number </th>
+          <td mat-cell *matCellDef="let element" class="center"> {{element.routeNumber}} </td>
+        </ng-container>
+    
+        <!-- Route Description Column -->
+        <ng-container matColumnDef="condition">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Condition </th>
+          <td mat-cell *matCellDef="let element"> {{element.condition}} </td>
+        </ng-container>
+        
+        <!-- Driver Name Column -->
+        <ng-container matColumnDef="lastService">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Date Service </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastService|date}} </td>
+        </ng-container>
+        
+        <!-- Duration Column -->
+        <ng-container matColumnDef="seatCount">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Seat Count </th>
+          <td mat-cell *matCellDef="let element"> {{element.seatCount}} </td>
+        </ng-container>
+        
+        
+        
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <div class="fbutton"><button mat-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button></div>
+</div>
