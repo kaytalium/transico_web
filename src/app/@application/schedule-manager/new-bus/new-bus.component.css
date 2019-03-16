@@ -30,7 +30,7 @@ p:nth-child(2){
   }
   .grid-item {
     /* background-color: rgba(255, 255, 255, 0.8); */
-    border: 0px solid rgba(0, 0, 0, 0.377);
+    border: 1px solid rgba(0, 0, 0, 0.377);
     padding: 1px;
     /* font-size: 30px; */
     text-align: left;

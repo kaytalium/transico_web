@@ -11,7 +11,14 @@ export class SidebarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  showSubmenu: boolean = false;
   navigation: Array<Navigation> = []
+
+  links = {
+    dashboard:{
+      status: "active"
+    }
+  }
 
   ngOnInit() {
    
@@ -19,20 +26,33 @@ export class SidebarComponent implements OnInit {
     this.navigation.push({
       value: "Dashboard",
       path: "application/dashboard",
-      status: "active",
+      status: "",
       title: "Transico Dashboard",
       icon: "dashboard",
-      position: 0
+      position: 0,
+      isClick: true,
     })
 
     // navigation path for Schedule Manager
     this.navigation.push({
       value: "Schedule Manager",
       path: "application/schedule_manager",
-      status: "",
+      status: "active",
       title: "Scheduling",
       icon: "departure_board",
-      position: 1
+      position: 1,
+      isClick: false,
+      expandIcon:{
+        open: "remove",
+        close: "add"
+      },
+      submenu:[
+        {
+          value: "Driver Schedule",
+          icon:"person",
+          status:""
+        }
+      ]
     })
 
     // navigation path for vehicle_manager
@@ -42,7 +62,8 @@ export class SidebarComponent implements OnInit {
       status: "",
       title: "Vehicle",
       icon: "directions_bus",
-      position: 2
+      position: 2,
+      isClick: true,
     })
 
     // navigation path for maintenance_manager
@@ -52,7 +73,8 @@ export class SidebarComponent implements OnInit {
       status: "",
       title: "Maintanance",
       icon: "build",
-      position: 3
+      position: 3,
+      isClick: true,
     })
 
     // navigation path for report_manager
@@ -62,7 +84,8 @@ export class SidebarComponent implements OnInit {
       status: "",
       title: "Report",
       icon: "bar_chart",
-      position: 4
+      position: 4,
+      isClick: true
     })
 
   }
@@ -79,6 +102,8 @@ export class SidebarComponent implements OnInit {
 
   }
 
+  
+
 }
 
 export interface Navigation {
@@ -88,4 +113,16 @@ export interface Navigation {
   title?: string,
   icon?: string,
   position: number
+  isClick?: Boolean
+  expandIcon?: {
+    open: string,
+    close: string
+  }
+  submenu?:Array<Submenu>
+}
+
+interface Submenu{
+  value: string
+  icon: string
+  status: string
 }
