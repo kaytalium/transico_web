@@ -7,7 +7,6 @@
 
 # dependencies
 /node_modules
-/src/app/schedule-manager/node_modules
 
 # profiling files
 chrome-profiler-events.json

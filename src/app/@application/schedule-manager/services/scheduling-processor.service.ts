@@ -24,7 +24,7 @@ export class SchedulingProcessorService {
      */
   constructor(private afs: AngularFirestore, afAuth: AngularFireAuth) {
     this.driverScheduleCollection = this.afs.collection('driver_schedule', query=>
-        query.orderBy('startTime',"desc")
+        query.orderBy('route',"desc").orderBy('startTime',"desc")
     );
    }
 

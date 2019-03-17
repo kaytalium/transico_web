@@ -1,61 +1,51 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSort, MatTableDataSource } from '@angular/material';
-import {MatDialog} from '@angular/material';
-import { DriverSchedule } from '../classes/driver-schedule';
-import { SchedulingProcessorService } from '../services/scheduling-processor.service';
-import { DriverScheduleObj, DriverScheduleDataTableColumns } from '../classes/system-interface';
-import { Router } from '@angular/router';
-import { RoutePath } from '@helper/helper';
-
-
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatSort, MatTableDataSource } from "@angular/material";
+import { MatDialog } from "@angular/material";
+import { DriverScheduleCollection } from "../classes/driver-schedule";
+import { SchedulingProcessorService } from "../services/scheduling-processor.service";
+import { DriverScheduleObj, RouteSchedule } from "../classes/system-interface";
+import { Router } from "@angular/router";
+import { RoutePath } from "@helper/helper";
 
 @Component({
-  selector: 'bus-schedule',
-  templateUrl: './bus-schedule.component.html',
-  styleUrls: ['./bus-schedule.component.css'],
-  providers:[SchedulingProcessorService]
+  selector: "bus-schedule",
+  templateUrl: "./bus-schedule.component.html",
+  styleUrls: ["./bus-schedule.component.css"],
+  providers: [SchedulingProcessorService]
 })
 export class BusScheduleComponent implements OnInit {
+  arrows: HTMLDivElement;
 
-  driverSchedule: DriverSchedule = new DriverSchedule()
-  collectionOfSchedules: Array<DriverSchedule>
+  collectionOfRouteSchedules: Array<RouteSchedule>;
 
-  displayedColumns = ['date', 'busId', 'routeNumber', 'routeDescription', 'driverName', 'duration','assignedBy','action'];
-  dataSource: MatTableDataSource<DriverScheduleDataTableColumns>
+  collection: DriverScheduleCollection = new DriverScheduleCollection();
 
-  @ViewChild(MatSort) sort: MatSort
+  constructor(
+    public dialog: MatDialog,
+    private driverScheduleService: SchedulingProcessorService,
+    private router: Router,
+    private route: RoutePath
+  ) {
+    driverScheduleService.get().subscribe((ds: DriverScheduleObj[]) => {
+      console.log(ds);
 
-  constructor(public dialog: MatDialog, private driverScheduleService: SchedulingProcessorService, 
-    private router: Router, private route: RoutePath) { 
-    driverScheduleService.get().subscribe((ds:DriverScheduleObj[])=>{
-      this.driverSchedule.setCollection(ds)
-      // console.log(ds)
-      this.dataSource = new MatTableDataSource(this.driverSchedule.getCollection()) 
-      this.dataSource.sort = this.sort
-    })
-
-   
-    
+      //  we now need to organize the data we got from the server in the way we need it in order to display
+      this.collection.setCollection(ds);
+      this.collectionOfRouteSchedules = this.collection.getCollection();
+    });
   }
 
   ngOnInit() {
-    
+    // this.arrows.style.display = "none";
   }
 
   openDialog(): void {
-    this.router.navigateByUrl(this.route.scheduleManagerDriverSchedule)
+    this.router.navigateByUrl(this.route.scheduleManagerDriverSchedule);
   }
 
+  showAll(route: string){
+    this.router.navigateByUrl(this.route.scheduleManager.path.routes)
+  }
 }
 
 
-export interface UserData {
-  date: string;
-  busId: string;
-  routeNumber: string;
-  routeDescription: string;
-  driverName: string;
-  duration: string;
-  assignedBy: string
-  action?: string
-}

@@ -1,5 +1,126 @@
-.wrapper{
-    padding: 10px;
-    height: 100%;
-    /* background: red; */
+.wrapper {
+  height: 150px;
+  width: 350px;
+  position: relative;
+    
+  cursor: pointer;
+  overflow: hidden;
+  margin-right: 25px;
+  background: rgba(255, 253, 255, 0.822);
+
+  border-radius: 5px;
+  border: 1px solid #eaeaea75;
+
+  -webkit-box-shadow: 0px 12px 3px -9px rgba(77, 77, 77, 0.32);
+  -moz-box-shadow: 0px 12px 3px -9px rgba(77, 77, 77, 0.32);
+  box-shadow: 0px 12px 3px -9px rgba(77, 77, 77, 0.32);
+}
+
+.grid-item-header {
+  grid-area: header;
+}
+.grid-item-header > .data {
+  margin-left: 10px;
+}
+.grid-item-route {
+  grid-area: route;
+}
+
+.grid-item-progress {
+  grid-area: progress;
+}
+.grid-item-duration {
+  grid-area: duration;
+}
+.grid-item-driver {
+  grid-area: driver;
+  text-align: left;
+  height: 60px;
+}
+
+.grid-item-driver > .data {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+.grid-item-driver > .title {
+  margin-left: 10px;
+}
+.grid-item-model-number {
+  grid-area: model;
+}
+
+.grid-item-duration,
+.grid-item-model-number,
+.grid-item-route {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header "
+    "driver driver progress"
+    "duration route model";
+
+  font-size: 14px;
+}
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  padding: 5px;
+  /* font-size: 30px;*/
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  font-size: 11px;
+  color: #2e2d2d;
+}
+
+.progress-meter {
+  width: 180px;
+  height: 180px;
+  /* background: green; */
+  position: relative;
+
+  margin-right: -90px;
+  margin-top: -150px;
+  float: right;
+  transform: rotate(35deg);
+
+  -webkit-box-shadow: -6px 1px 3px 1px rgba(77, 77, 77, 0.32);
+  -moz-box-shadow: -6px 6px 3px 9px rgba(77, 77, 77, 0.32);
+  box-shadow: -2px 1px 3px 1px rgba(77, 77, 77, 0.32);
+}
+
+.progress-meter > .info {
+  position: absolute;
+  bottom: 25px;
+  right: 60px;
+  transform: rotate(-35deg);
+
+  color: antiquewhite;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+
+.text-green{
+  color: green;
+}
+.green {
+  background: green;
+}
+
+.red {
+  background: red;
+}
+
+.orange{
+  background: orange;
 }

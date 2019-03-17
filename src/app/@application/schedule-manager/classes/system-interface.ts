@@ -34,15 +34,19 @@ interface StatusInfo{
     status?: string
 }
 
-export interface DriverScheduleDataTableColumns{
-    date: Date
-    busId: string
-    routeNumber: string
-    routeDescription: string
+
+export interface RouteSchedule{
+    route: string
+    schedules: Array<Schedule>
+}
+
+export interface Schedule{
+    assignDate: Date
     driverName: string
-    duration: string 
-    assignedBy: string 
-    action: string
+    duration: string
+    routeNumber: string
+    modelNumber: string
+    progressAmount: number
 }
 
 

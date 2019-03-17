@@ -1,60 +1,37 @@
 <div class="wrapper">
-  <!-- <bus-schedule-control></bus-schedule-control> -->
+  
+  <navigation-tag icon="departure_board"></navigation-tag>
 
-  <div class="example-container mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource" matSort>
-    
-        <!-- Date Column -->
-        <ng-container matColumnDef="date">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-          <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
-        </ng-container>
-    
-        <!-- Bus ID Column -->
-        <ng-container matColumnDef="busId">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Bus ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.busId}} </td>
-        </ng-container>
-    
-        <!-- Route Number Column -->
-        <ng-container matColumnDef="routeNumber">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Route Number </th>
-          <td mat-cell *matCellDef="let element" class="center"> {{element.routeNumber}} </td>
-        </ng-container>
-    
-        <!-- Route Description Column -->
-        <ng-container matColumnDef="routeDescription">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Route Description </th>
-          <td mat-cell *matCellDef="let element"> {{element.routeDescription}} </td>
-        </ng-container>
-        
-        <!-- Driver Name Column -->
-        <ng-container matColumnDef="driverName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Driver Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.driverName}} </td>
-        </ng-container>
-        
-        <!-- Duration Column -->
-        <ng-container matColumnDef="duration">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
-          <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
-        </ng-container>
-        
-        <!-- Assign By Column -->
-        <ng-container matColumnDef="assignedBy">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Assign By </th>
-          <td mat-cell *matCellDef="let element"> {{element.assignedBy}} </td>
-        </ng-container>
-        
-        <!-- Action Column -->
-        <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef> Action </th>
-          <td mat-cell *matCellDef="let element"> {{element.action}} </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    </div>
+  <ul class="list">
+    <li *ngFor="let collection of collectionOfRouteSchedules">
+        <div class="row_title">
+            {{collection?.route}} <span (click)="showAll(collection?.route)">Show All</span>
+          </div>
+      <div class="row" ng2-carouselamos 
+        [items]="collection.schedules"
+        [width]="1100"
+        [$prev]="prev"
+        [$next]="next"
+        [$item]="item"
+      >
+      </div>
 
-    <div class="fbutton"><button mat-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button></div>
+      <ng-template #prev >
+        <div class="arrows">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </div>
+      </ng-template>
+
+      <ng-template #next>
+        <div class="arrows">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </div>
+      </ng-template>
+
+      <ng-template #item let-item let-i="index">
+        <schedules [info]=item></schedules>
+      </ng-template>
+    </li>
+  </ul>
 </div>
+

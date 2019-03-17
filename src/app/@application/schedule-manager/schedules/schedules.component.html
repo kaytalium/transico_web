@@ -1,8 +1,30 @@
-<div class="wrapper">  
-  <mat-tab-group animationDuration="2000ms">
-    <mat-tab label="Driver Schedule"><bus-schedule></bus-schedule></mat-tab>
-    <mat-tab label="Inspector Schedule">Inspectors are to a route and a terminal</mat-tab>
-    <mat-tab label="Bus Depots"><bus-depots></bus-depots></mat-tab>
-  </mat-tab-group>
+<div class="wrapper">
+  <div class="grid-container">
+    <div class="grid-item-header">
+      <div class="data">{{ info?.assignDate | date }}</div>
+    </div>
 
+    <div class="grid-item-driver">
+      <div class="data">{{ info?.driverName }}</div>
+      <div class="title">Driver</div>
+    </div>
+    <div class="grid-item-progress">
+      <div class="progress-meter {{ meterColor }}">
+        <div class="info">{{ info?.progressAmount }}%</div>
+      </div>
+    </div>
+
+    <div class="grid-item-duration">
+      <div class="data">{{ info?.duration }}</div>
+      <div class="title">Duration</div>
+    </div>
+    <div class="grid-item-route">
+      <div class="route-number">{{ info?.routeNumber }}</div>
+      <div class="title text-green">Route Number</div>
+    </div>
+    <div class="grid-item-model-number">
+      <div class="data">{{ info?.modelNumber }}</div>
+      <div class="title">Bus Model Number</div>
+    </div>
+  </div>
 </div>

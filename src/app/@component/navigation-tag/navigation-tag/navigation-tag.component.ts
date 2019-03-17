@@ -9,7 +9,8 @@ import { NavigationPath } from '../navigationPath';
 })
 export class NavigationTagComponent implements OnInit {
 
-  
+  @Input() icon: string;
+  @Input() tagline: string = "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
   url: string;
   constructor(private router: Router) { }
 

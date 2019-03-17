@@ -16,8 +16,13 @@ import { MatCardModule } from '@angular/material';
 import { ScheduleRouterModule } from './schedule-router';
 import { GeneralAssignmentComponent } from './general-assignment/general-assignment.component';
 import { WorkBoardComponent } from './work-board/work-board.component';
-import { BusDepotsComponent } from './bus-depots/bus-depots.component';
+import { BusComponent } from './bus/bus.component';
 import { NewBusComponent } from './new-bus/new-bus.component';
+import { NavigationTagModule } from '@src/app/@component/navigation-tag';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { InventoryComponent } from './inventory/inventory.component';
+import { InspectorsComponent } from './inspectors/inspectors.component';
+import { BusAndTerminalComponent } from './bus-and-terminal/bus-and-terminal.component'
 
 
 @NgModule({
@@ -28,7 +33,7 @@ import { NewBusComponent } from './new-bus/new-bus.component';
     DriverAssignmentComponent, 
     BusHolderComponent, 
     GeneralAssignmentComponent, 
-    WorkBoardComponent, BusDepotsComponent, NewBusComponent
+    WorkBoardComponent, BusComponent, NewBusComponent, InventoryComponent, InspectorsComponent, BusAndTerminalComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +45,9 @@ import { NewBusComponent } from './new-bus/new-bus.component';
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     MatCardModule,
-    ScheduleRouterModule
+    ScheduleRouterModule,
+    NavigationTagModule,
+    Ng2CarouselamosModule
    
   ],
   exports:[
