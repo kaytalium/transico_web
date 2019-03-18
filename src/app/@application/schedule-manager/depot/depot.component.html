@@ -1,0 +1,179 @@
+<div class="wrapper">
+  <div class="header {{ indicator }}" (click)="openDepot()">
+    <div class="bus_model_title">
+      Depot
+    </div>
+    <div class="bus_model_value">
+      {{ info.depotName }}
+    </div>
+    <div class="address">
+      <p>
+        <span>
+          {{ info.address.streetNumber }}
+          {{ info.address.streetName }}
+        </span>
+        <span>{{ info.address.city }}</span>
+        <span>{{ info.address.parish }}</span>
+      </p>
+    </div>
+    <div class="condition {{ condition }}">
+      <mat-icon>directions_bus</mat-icon>
+    </div>
+  </div>
+  <div class="content">
+    <div class="grid-container">
+      <div class="grid-item1">
+        <div class="title">No. of Bus</div>
+        <div class="data">{{ info.busCount }}</div>
+      </div>
+
+      <div class="grid-item2">
+        <div class="case">
+          <div class="title_chart">
+            <div class="info">
+              Running
+              <div class="percentage">{{ info.running.percentage }}%</div>
+              <!-- <div class="actual">
+                {{ info.running.value }}
+              </div> -->
+            </div>
+          </div>
+          <round-progress
+            [current]="info.running.percentage"
+            [max]="100"
+            [radius]="45"
+            [stroke]="3"
+            [semicircle]="false"
+            [rounded]="true"
+            [clockwise]="true"
+            [responsive]="false"
+            [duration]="800"
+            [animation]="'easeInOutQuart'"
+            [animationDelay]="0"
+          ></round-progress>
+        </div>
+      </div>
+
+      <div class="grid-item3">
+        <div class="case">
+          <div class="title_chart">
+            <div class="info">
+              Repairing
+              <div class="percentage">{{ info.repair.percentage }}%</div>
+              <!-- <div class="actual">{{ info.repair.value }}</div> -->
+            </div>
+          </div>
+          <round-progress
+            [current]="info.repair.percentage"
+            [max]="100"
+            [radius]="45"
+            [stroke]="2"
+            [semicircle]="false"
+            [rounded]="true"
+            [clockwise]="true"
+            [responsive]="false"
+            [duration]="800"
+            [animation]="'easeInOutQuart'"
+            [animationDelay]="0"
+          ></round-progress>
+        </div>
+      </div>
+
+      <div class="grid-item4">
+        <div class="case">
+          <div class="title_chart">
+            <div class="info">
+              <div class="text">Non</div>
+              repairable
+              <div class="percentage">{{ info.nonRepairable.percentage }}%</div>
+              <!-- <div class="actual">
+                {{ info.nonRepairable.value }}
+              </div> -->
+            </div>
+          </div>
+          <round-progress
+            [current]="info.nonRepairable.percentage"
+            [max]="100"
+            [radius]="45"
+            [stroke]="2"
+            [semicircle]="false"
+            [rounded]="true"
+            [clockwise]="true"
+            [responsive]="false"
+            [duration]="800"
+            [animation]="'easeInOutQuart'"
+            [animationDelay]="0"
+          ></round-progress>
+        </div>
+      </div>
+
+      <div class="grid-item8">
+        <div class="title">Capacity</div>
+        <div class="data">{{ info.capacity }}</div>
+      </div>
+
+      <div class="grid-item5">
+        <div class="case">
+          <div class="title_chart">
+            <div class="info">
+              Assigned
+              <div class="percentage">{{ info.assign.percentage }}%</div>
+              <!-- <div class="actual">
+                {{ info.assign.value }}
+              </div> -->
+            </div>
+          </div>
+          <round-progress
+            [current]="info.assign.percentage"
+            [max]="100"
+            [radius]="45"
+            [stroke]="2"
+            [semicircle]="false"
+            [rounded]="true"
+            [clockwise]="true"
+            [responsive]="false"
+            [duration]="800"
+            [animation]="'easeInOutQuart'"
+            [animationDelay]="0"
+          ></round-progress>
+        </div>
+      </div>
+
+      <div class="grid-item6">
+        <div class="case">
+          <div class="title_chart">
+            <div class="info">
+              Unassigned
+              <div class="percentage">{{ info.unassigned.percentage }}%</div>
+              <!-- <div class="actual">{{ info.unassigned.value }}</div> -->
+            </div>
+          </div>
+          <round-progress
+            [current]="info.unassigned.percentage"
+            [max]="100"
+            [radius]="45"
+            [stroke]="2"
+            [semicircle]="false"
+            [rounded]="true"
+            [clockwise]="true"
+            [responsive]="false"
+            [duration]="800"
+            [animation]="'easeInOutQuart'"
+            [animationDelay]="0"
+          ></round-progress>
+        </div>
+      </div>
+
+      <div class="grid-item7">
+        Depot Status
+      </div>
+
+      <div class="grid-item9">
+        Bus Assignment
+      </div>
+      <div class="grid-item10"></div>
+      <div class="grid-item11"></div>
+      <div class="grid-item12"></div>
+    </div>
+  </div>
+</div>

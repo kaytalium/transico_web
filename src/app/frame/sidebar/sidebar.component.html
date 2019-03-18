@@ -1,5 +1,4 @@
 <div class="wrapper">
-
   <!-- Main application logo -->
   <div class="logo">
     <logo></logo>
@@ -12,9 +11,9 @@
 
   <!-- navigation links and icons -->
   <div class="navigation">
-    <mat-list id=style-3>
+    <mat-list id="style-3">
       <!-- Dashboard Manager -->
-      <mat-list-item  title="Transico Dashboard" (click)="navigate(0)">
+      <mat-list-item title="Transico Dashboard" (click)="navigate(0)">
         <mat-icon>dashboard</mat-icon>Dashboard
       </mat-list-item>
 
@@ -22,15 +21,29 @@
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="">
         <mat-icon>departure_board</mat-icon>
         Schedule Manager
-        <button class="left" mat-button mat-icon-button >
-          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}">expand_more</mat-icon>
+        <button class="left" mat-button mat-icon-button>
+          <mat-icon class="menu-button" [ngClass]="{ rotated: showSubmenu }"
+            >expand_more</mat-icon
+          >
         </button>
       </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : showSubmenu}">
-        <mat-list-item (click)="navigate(1)" ><mat-icon>keyboard_arrow_right</mat-icon> Driver Schedule</mat-list-item>
-        <mat-list-item (click)="navigate(2)" ><mat-icon>keyboard_arrow_right</mat-icon> Inspector Schedule</mat-list-item>
-        <mat-list-item (click)="navigate(3)" ><mat-icon>keyboard_arrow_right</mat-icon> Bus Inventory</mat-list-item>
-        <mat-list-item (click)="navigate(4)" ><mat-icon>keyboard_arrow_right</mat-icon> Route/Terminal</mat-list-item>
+      <div class="submenu" [ngClass]="{ expanded: showSubmenu }">
+        <mat-list-item (click)="navigate(1)"
+          ><mat-icon>keyboard_arrow_right</mat-icon> Driver
+          Schedule</mat-list-item
+        >
+        <mat-list-item (click)="navigate(2)"
+          ><mat-icon>keyboard_arrow_right</mat-icon> Inspector
+          Schedule</mat-list-item
+        >
+        <mat-list-item (click)="navigate(3)"
+          ><mat-icon>keyboard_arrow_right</mat-icon> Bus
+          Inventory</mat-list-item
+        >
+        <mat-list-item (click)="navigate(4)"
+          ><mat-icon>keyboard_arrow_right</mat-icon>
+          Route/Terminal</mat-list-item
+        >
       </div>
 
       <!-- Vehicle Manager -->
@@ -42,27 +55,27 @@
       <mat-list-item title="Maintenance" (click)="navigate(6)">
         <mat-icon>build</mat-icon>Maintenance Manager
       </mat-list-item>
+      
+      <!-- Smarter Card Manager -->
+      <mat-list-item title="Transico Dashboard" (click)="navigate(7)">
+        <mat-icon>money</mat-icon>Smarter Card Manager
+      </mat-list-item>
 
       <!-- Report Manager -->
       <mat-list-item title="Transico Dashboard" (click)="navigate(7)">
         <mat-icon>bar_chart</mat-icon>Report Manager
       </mat-list-item>
-
     </mat-list>
     <!-- <ul> -->
 
-      <!--<li *ngFor="let nav of navigation" class="{{nav.status}}" title="{{nav.title}}" (click)="navigate(nav.position)"> 
+    <!--<li *ngFor="let nav of navigation" class="{{nav.status}}" title="{{nav.title}}" (click)="navigate(nav.position)"> 
         <div class="row">
           <mat-icon>{{nav.icon}}</mat-icon>{{nav.value}} <div class="add" *ngIf="!nav.isClick"><mat-icon>add</mat-icon></div>
         </div>
 
          -->
 
-
-
-
-
-      <!-- 
+    <!-- 
         Schedule Manager
         <div class="add">
           <mat-icon>add</mat-icon>
@@ -86,7 +99,7 @@
         </div>
 
       </li> -->
-      <!-- <li class="main-li" title="Vehicle" (click)="navigate(2)">
+    <!-- <li class="main-li" title="Vehicle" (click)="navigate(2)">
         <mat-icon>directions_bus</mat-icon>Vehicle Manager
       </li>
       <li class="main-li" title="Maintenance" (click)="navigate(3)">

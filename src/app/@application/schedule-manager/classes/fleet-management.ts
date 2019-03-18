@@ -17,7 +17,7 @@ export class FleetManagement {
 
             tableData.push({
                 modelNumber: res.busModel,
-                lastService: (typeof res.lastService.toDate()=='undefined'?new Date():res.lastService.toDate()),
+                lastService: (typeof res.lastService =='undefined'?new Date():res.lastService.toDate()),
                 depot: res.depot,
                 routeNumber: res.routeNumber,
                 condition: res.condition,

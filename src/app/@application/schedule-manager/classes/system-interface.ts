@@ -129,3 +129,28 @@ export interface BusFleetDataTableColumns{
     lastService: Date
     seatCount: number
 }
+
+export interface BusDepot{
+    defaultColor: string
+    busCount: number
+    capacity: number
+    depotName: string
+    address: Address
+    nonRepairable: BusStats
+    repair: BusStats
+    running: BusStats
+    assign: BusStats
+    unassigned: BusStats
+}
+
+export interface Address{
+    streetNumber: string
+    streetName: string
+    parish: string
+    city: string
+}
+
+export interface BusStats{
+    percentage: number
+    value: number
+}
