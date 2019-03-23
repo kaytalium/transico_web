@@ -43,7 +43,8 @@ export class RoutePath {
             bus_inventory: 'application/schedule_manager/inventory',
             inspector_schedule: 'application/schedule_manager/inspectors',
             inspector_new: 'application/schedule_manager/new_inspector_schedule',
-            bus_and_terminal: 'application/schedule_manager/bus_and_terminal'
+            bus_and_terminal: 'application/schedule_manager/bus_and_terminal',
+            bus_depot: 'application/schedule_manager/bus_and_depot'
         }
     }
 

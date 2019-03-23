@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { BusDepotService } from "../services/bus-depot-service";
 import { BusDepot } from "../classes/system-interface";
+import { Router } from '@angular/router';
+import { RoutePath } from '@helper/helper';
 
 @Component({
   selector: "depot",
@@ -14,7 +16,7 @@ export class DepotComponent implements OnInit {
   indicator: string;
   condition: string;
 
-  constructor() {}
+  constructor(private router: Router, private routePath: RoutePath) {}
 
   ngOnInit() {
     this.info.unassigned
@@ -31,5 +33,6 @@ export class DepotComponent implements OnInit {
   openDepot(){
     //Navigate to the depot location
     // pass this.info.depotName as an argument 
+    this.router.navigateByUrl(this.routePath.scheduleManager.path.bus_depot)
   }
 }

@@ -73,7 +73,7 @@ export class DriverAssignmentComponent implements OnInit {
 
   onBackClick(): void {
     // this.dialogRef.close();
-    this.router.navigateByUrl(this.route.scheduleManagerSchedules)
+    this.router.navigateByUrl(this.route.scheduleManager.path.driverSchedule)
   }
 
   public OnSelectChange() {

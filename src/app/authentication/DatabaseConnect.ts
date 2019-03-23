@@ -5,7 +5,7 @@ import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/fire
 import { SignupData, User } from './interface'
 import { Observable } from 'rxjs';
 import { FirebaseAuth } from '@angular/fire';
-import { UserData } from '../@application/schedule-manager/bus-schedule/bus-schedule.component';
+
 
 
 

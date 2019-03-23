@@ -5,17 +5,15 @@ import { SchedulesComponent } from "./schedules/schedules.component";
 import { BusScheduleComponent } from "./bus-schedule/bus-schedule.component";
 import { BusScheduleControlComponent } from "./@components/bus-schedule-control/bus-schedule-control.component";
 import { MaterialModule } from "@material/material/material.module";
-import { MatDialogModule } from "@angular/material/dialog";
 import { DriverAssignmentComponent } from "./driver-assignment/driver-assignment.component";
 import { BusHolderComponent } from "./@components/bus-holder/bus-holder.component";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { config } from "@authentication/configure";
-import { MatCardModule } from "@angular/material";
 import { ScheduleRouterModule } from "./schedule-router";
 import { GeneralAssignmentComponent } from "./general-assignment/general-assignment.component";
-import { WorkBoardComponent } from "./work-board/work-board.component";
+import { BusAndDepotComponent } from "./bus-and-depot/bus-and-depot.component";
 import { DepotComponent } from "./depot/depot.component";
 import { NewBusComponent } from "./new-bus/new-bus.component";
 import { NavigationTagModule } from "@src/app/@component/navigation-tag";
@@ -34,7 +32,7 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     DriverAssignmentComponent,
     BusHolderComponent,
     GeneralAssignmentComponent,
-    WorkBoardComponent,
+    BusAndDepotComponent,
     DepotComponent,
     NewBusComponent,
     InventoryComponent,
@@ -46,11 +44,9 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    MatDialogModule,
     AngularFireModule.initializeApp(config.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
-    MatCardModule,
     ScheduleRouterModule,
     NavigationTagModule,
     Ng2CarouselamosModule,
