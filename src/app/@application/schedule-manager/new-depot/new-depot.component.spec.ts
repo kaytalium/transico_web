@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeneralAssignmentComponent } from './general-assignment.component';
+import { NewDepotComponent } from './new-depot.component';
 
-describe('GeneralAssignmentComponent', () => {
-  let component: GeneralAssignmentComponent;
-  let fixture: ComponentFixture<GeneralAssignmentComponent>;
+describe('NewDepotComponent', () => {
+  let component: NewDepotComponent;
+  let fixture: ComponentFixture<NewDepotComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GeneralAssignmentComponent ]
+      declarations: [ NewDepotComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GeneralAssignmentComponent);
+    fixture = TestBed.createComponent(NewDepotComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

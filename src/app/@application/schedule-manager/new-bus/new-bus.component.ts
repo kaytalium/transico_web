@@ -1,13 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-import { NewDepotService } from '../services/new-depot-service';
+import { NewBusService } from '../services/new-bus-service';
 import { Observable } from 'rxjs';
-import { Parish, NewDepotInterface, BusDepot } from '../classes/system-interface';
-import { CodeGeneration } from '../classes/CodeGeneration';
-import { BusDepotClass } from '../classes/BusDepot';
-import { NewDepotEntry } from '../classes/NewDepotEntry';
+import { Parish, NewBusDialogData, DBRoute, BusInputFormData } from '../classes/system-interface';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { NewDepotEntry } from '../classes/NewDepotEntry';
+import { NewBusEntry } from '../classes/NewBusEntry';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -21,56 +20,49 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   selector: 'app-new-bus',
   templateUrl: './new-bus.component.html',
   styleUrls: ['./new-bus.component.css'],
-  providers: [NewDepotService, CodeGeneration, BusDepotClass]
+  providers: [NewBusService]
 })
 export class NewBusComponent implements OnInit {
 
   myForm: FormGroup
 
-  parishes: Array<Parish>
+  dbRoutes: Array<DBRoute>
   depotID: string;
-  NewDepot: NewDepotEntry = new NewDepotEntry();
+  newBusEntry: NewBusEntry
 
 
-  constructor(private depotDB: NewDepotService, 
-    private codeGeneration: CodeGeneration, 
-    private newDepot: BusDepotClass,
+  constructor(private busService: NewBusService, 
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<NewBusComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: NewBusDialogData
    ) { 
      
       this.myForm = this.formBuilder.group({
-        color: ['', [Validators.required]],
-        depotName: ['', [Validators.required]],
-        capacity: ['', [Validators.required]],
-        streetAddress: ['', [Validators.required]],
-        town: ['', [Validators.required]],
-        city: ['', [Validators.required]],
-        parish: ['', [Validators.required]],
+        busModel: ['', Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{2}[A-Z]{1}?[0-9]{4}$')
+        ])],
+        condition: ['', [Validators.required]],
+        serviceDate: ['', [Validators.required]],
+        seatCount: ['', [Validators.required]],
+        routeNumber: [''],
        });
   
     }
 
   ngOnInit() {
-    this.depotDB.getParishes().subscribe(res=>{
-      this.parishes = res;      
+    // get the list of route from the database
+    this.busService.getRoute().subscribe(res=>{
+      this.dbRoutes = res;      
     })
-
-    this.depotID = this.codeGeneration.generateCode(6)
   }
 
-  onSubmit(formValue){    
+  onSubmit(formValue: BusInputFormData){    
     if(this.myForm.valid){
-      console.log("OnSubmit: "+formValue)
-      
-      
-      this.myForm.reset()
-      
-      this.myForm.markAsPristine()
-      this.myForm.markAsUntouched()
-      this.myForm.updateValueAndValidity()
-      
-      // this.depotDB.createNewDepot(this.NewDepot.getDetail())
+      console.log("OnSubmit: "+formValue.routeNumber)
+      this.newBusEntry = new NewBusEntry(formValue, this.data)      
+      this.busService.createNewBus(this.newBusEntry.getBusDetail())
+      this.dialogRef.close();
     }
 
   }

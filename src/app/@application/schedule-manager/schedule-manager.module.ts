@@ -12,7 +12,6 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { config } from "@authentication/configure";
 import { ScheduleRouterModule } from "./schedule-router";
-import { GeneralAssignmentComponent } from "./general-assignment/general-assignment.component";
 import { BusAndDepotComponent } from "./bus-and-depot/bus-and-depot.component";
 import { DepotComponent } from "./depot/depot.component";
 import { NewBusComponent } from "./new-bus/new-bus.component";
@@ -23,6 +22,8 @@ import { InspectorsComponent } from "./inspectors/inspectors.component";
 import { BusAndTerminalComponent } from "./bus-and-terminal/bus-and-terminal.component";
 
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { NewDepotComponent } from './new-depot/new-depot.component';
+import { InspectorAssignmentComponent } from './inspector-assignment/inspector-assignment.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,14 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     BusScheduleControlComponent,
     DriverAssignmentComponent,
     BusHolderComponent,
-    GeneralAssignmentComponent,
+    NewDepotComponent,
     BusAndDepotComponent,
     DepotComponent,
     NewBusComponent,
     InventoryComponent,
     InspectorsComponent,
-    BusAndTerminalComponent
+    BusAndTerminalComponent,
+    InspectorAssignmentComponent
   ],
   imports: [
     CommonModule,
@@ -54,6 +56,6 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     
   ],
   exports: [ScheduleRouterModule],
-  entryComponents: [NewBusComponent]
+  entryComponents: [NewBusComponent, NewDepotComponent, InspectorAssignmentComponent]
 })
 export class ScheduleManagerModule {}

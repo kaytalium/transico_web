@@ -1,0 +1,9 @@
+.wrapper{
+    padding: 10px;
+}
+
+.fbutton{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    }

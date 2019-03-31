@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { SchedulesComponent } from "./schedules/schedules.component";
-import { GeneralAssignmentComponent } from "./general-assignment/general-assignment.component";
 import { DriverAssignmentComponent } from "./driver-assignment/driver-assignment.component";
 import { BusScheduleComponent } from "./bus-schedule/bus-schedule.component";
 import { InspectorsComponent } from './inspectors/inspectors.component';
@@ -24,10 +23,6 @@ const routes: Routes = [
     component: DriverAssignmentComponent
   },
   {
-    path: "all_routes",
-    component: GeneralAssignmentComponent
-  },
-  {
     path: "inventory",
     component: InventoryComponent
   },
@@ -40,7 +35,7 @@ const routes: Routes = [
     component: BusAndTerminalComponent
   },
   {
-    path: "bus_and_depot",
+    path: "bus_and_depot/:id",
     component: BusAndDepotComponent
   },
 

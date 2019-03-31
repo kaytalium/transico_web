@@ -1,19 +1,12 @@
 .wrapper{
-height: 490px;
-width: 100%;
-/* padding: 5px; */
-/* overflow-y: hidden; */
-/* background: red; */
-position: relative;
+    /* background: red; */
+    height: 100%;
+    position: relative;
 }
-
-p:first-child{
-    font-size: 14px;
-}
-
-p:nth-child(2){
+p:nth-child(1){
     font-size: 12px;
 }
+
 
 .footer{
     position: absolute;
@@ -27,7 +20,7 @@ p:nth-child(2){
 /* Grid Settings */
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     /* background-color: #2196F3; */
     padding-top: 70px;
   }

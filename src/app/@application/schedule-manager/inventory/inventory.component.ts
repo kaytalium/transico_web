@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BusDepotService } from '../services/bus-depot-service';
 import { FleetManagement } from '../classes/fleet-management';
 import { MatDialog } from '@angular/material';
-import { NewBusComponent } from '../new-bus/new-bus.component';
+
 import { BusFleetDataTableColumns, BusDepot } from '../classes/system-interface';
+import { NewDepotComponent } from '../new-depot/new-depot.component';
 
 @Component({
   selector: 'app-inventory',
@@ -33,10 +34,9 @@ export class InventoryComponent implements OnInit {
 
 
   openDialog(){
-    const dialogRef = this.dialog.open(NewBusComponent, {
+    const dialogRef = this.dialog.open(NewDepotComponent, {
       width: '800px',
       height:'600px'
-
     });
 
     dialogRef.afterClosed().subscribe(result => {

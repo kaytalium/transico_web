@@ -30,9 +30,9 @@ export class DepotComponent implements OnInit {
     
   }
 
-  openDepot(){
+  openDepot(depotID: string){
     //Navigate to the depot location
     // pass this.info.depotName as an argument 
-    this.router.navigateByUrl(this.routePath.scheduleManager.path.bus_depot)
+    this.router.navigate([this.routePath.scheduleManager.path.bus_depot,depotID])
   }
 }

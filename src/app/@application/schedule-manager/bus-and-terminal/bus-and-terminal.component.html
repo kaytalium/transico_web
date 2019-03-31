@@ -1,3 +1,18 @@
 <div class="wrapper">
-    <navigation-tag icon="departure_board"></navigation-tag>
+  <navigation-tag icon="departure_board"></navigation-tag>
+  <div class="content">
+      <div class="left route">
+          <h1 mat-dialog-title>Routes</h1>
+      </div>
+
+      <div class="right terminal">
+          <h1 mat-dialog-title>Terminals</h1>
+      </div>
+  </div>
+
+  <div class="fbutton">
+    <button mat-fab color="primary" (click)="scheduleInspector()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
 </div>

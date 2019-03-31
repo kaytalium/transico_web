@@ -167,3 +167,50 @@ export interface NewDepotInterface {
     parish: string
   }
 }
+
+
+export interface NewBusDialogData {
+  depotName: string,
+  userID?: string
+}
+
+export interface DBRoute{
+  number: string
+}
+
+export interface BusInputFormData{
+  busModel: string
+  condition: string
+  serviceDate: Date
+  seatCount: number
+  routeNumber: string
+
+}
+
+export interface SystemUser{
+  email: string
+  fullname: string
+  staffID: string
+  uid: string
+  userType: string
+}
+
+export interface InspectorInputFormData{
+  inspector: string;
+  terminal: string;
+  assignDate: Date;
+  routeNumber: string
+}
+
+export interface Terminal{
+  name: string
+  terminalID: string
+}
+
+export interface InspectorSchedule{
+  assignDate: firebase.firestore.Timestamp
+  name: string
+  routeNumber: string
+  staffID: string
+  terminal:string
+}

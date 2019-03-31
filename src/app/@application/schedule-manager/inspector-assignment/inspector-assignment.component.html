@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <h1 mat-dialog-title>Inspector Assignment</h1>
+  <p>Use the form below to schedule inspectors for routes.</p>
+  <form class="form" (ngSubmit)="onSubmit(myForm.value)" [formGroup]="myForm">
+    <div class="grid-container">
+      <div class="grid-item">
+        <!-- Inspector ame -->
+        <mat-form-field>
+          <mat-label>Inspector</mat-label>
+          <mat-select formControlName="inspector">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let person of inspectors" value="{{person.fullname}}">{{person.fullname}}</mat-option>
+          </mat-select>
+          <mat-hint>Select an Inspector </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="grid-item">
+        <!-- Assignment Date -->
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            placeholder="Assignement Date"
+            formControlName="assignDate"
+            type="date"
+          />
+          <mat-hint>Date Inspector is to work</mat-hint>
+        </mat-form-field>       
+      </div>
+
+      <div class="grid-item">
+          <div class="address"></div>
+        <!-- Terminal  -->
+        <mat-form-field>
+          <mat-label>Transport Terminal</mat-label>
+          <mat-select formControlName="terminal">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let terminal of terminals" value="{{terminal.name}}">{{terminal.name}}</mat-option>
+          </mat-select>
+          <mat-hint>Bus Terminal inspector is to report to</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="grid-item">
+        <div class="address"></div>
+        <!-- Route number -->
+        <mat-form-field>
+          <mat-label>Bus Route</mat-label>
+          <mat-select formControlName="routeNumber">
+            <mat-option
+              *ngFor="let route of dbRoutes"
+              value="{{ route.number }}"
+              >{{ route.number }}</mat-option
+            >
+          </mat-select>
+          <mat-hint>All inspector must be assign a terminal</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="footer">
+      <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!myForm.valid"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
