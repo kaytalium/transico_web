@@ -7,6 +7,7 @@ import { InspectorsComponent } from './inspectors/inspectors.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BusAndTerminalComponent } from './bus-and-terminal/bus-and-terminal.component';
 import { BusAndDepotComponent } from './bus-and-depot/bus-and-depot.component';
+import { AllRouteComponent } from './all-route/all-route.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "bus_and_depot/:id",
     component: BusAndDepotComponent
+  },
+  {
+    path: "all_route/:id",
+    component: AllRouteComponent
   },
 
 ];

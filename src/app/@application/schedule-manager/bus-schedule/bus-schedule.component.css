@@ -46,8 +46,9 @@ table {
   cursor: pointer;
 }
 
-.row_title span:hover{
+.row_title:hover{
   color: blue;
+  cursor: pointer;
 }
 .slider {
   width: 100%;

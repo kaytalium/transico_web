@@ -1,13 +1,7 @@
 .wrapper{
     padding: 10px;
 }
-table {
-    width: 100%;
-  }
 
-  .center{
-      text-align: center;
-  }
 .fbutton{
     position: fixed;
     bottom: 20px;

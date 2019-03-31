@@ -39,7 +39,7 @@ export class RoutePath {
     public scheduleManager = {
         path: {
             driverSchedule: 'application/schedule_manager',
-            routes: 'application/schedule_manager/all_routes',
+            routes: 'application/schedule_manager/all_route',
             bus_inventory: 'application/schedule_manager/inventory',
             inspector_schedule: 'application/schedule_manager/inspectors',
             inspector_new: 'application/schedule_manager/new_inspector_schedule',

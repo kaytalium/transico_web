@@ -43,8 +43,8 @@ export class BusScheduleComponent implements OnInit {
     this.router.navigateByUrl(this.route.scheduleManagerDriverSchedule);
   }
 
-  showAll(route: string){
-    this.router.navigateByUrl(this.route.scheduleManager.path.routes)
+  showAll(routeNumber: string){
+    this.router.navigate([this.route.scheduleManager.path.routes,routeNumber])
   }
 }
 

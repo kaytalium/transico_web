@@ -1,6 +1,69 @@
 <div class="wrapper">
 <h1>{{depot}} Depot</h1> 
 
+<div class="content">
+  <table mat-table [dataSource]="dataSource">
+    <!-- Bus Model Column -->
+    <ng-container matColumnDef="busModel">
+      <th mat-header-cell *matHeaderCellDef>Bus Model</th>
+      <td mat-cell *matCellDef="let element">{{ element.busModel }}</td>
+    </ng-container>
+
+    <!-- Condition Column -->
+    <ng-container matColumnDef="condition">
+      <th mat-header-cell *matHeaderCellDef>Condition</th>
+      <td mat-cell *matCellDef="let element">{{ element.condition }}</td>
+    </ng-container>
+
+    <!-- Depot Assigned Column -->
+    <ng-container matColumnDef="depot">
+      <th mat-header-cell *matHeaderCellDef>Depot Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.depot }}</td>
+    </ng-container>
+
+    <!-- Last Service Date Column -->
+    <ng-container matColumnDef="lastService">
+      <th mat-header-cell *matHeaderCellDef>Last Service Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.lastService.toDate() | date }}
+      </td>
+    </ng-container>
+
+    <!-- Route Assignd Column -->
+    <ng-container matColumnDef="routeNumber">
+      <th mat-header-cell *matHeaderCellDef class="center">Route Number</th>
+      <td mat-cell *matCellDef="let element" class="center">{{ element.routeNumber }}</td>
+    </ng-container>
+
+    <!-- Seat Count Column -->
+    <ng-container matColumnDef="seatCount">
+      <th mat-header-cell *matHeaderCellDef class="center">Seat Count</th>
+      <td mat-cell *matCellDef="let element" class="center">{{ element.seatCount }}</td>
+    </ng-container>
+
+    
+    <!-- Action Column -->
+    <ng-container matColumnDef="action" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef class="center">Action</th>
+      <td mat-cell *matCellDef="let element" class="center">
+        <button mat-button title="Edit {{element.name}} assignment">
+              <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button title="this will remove the assignment from view">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </td>
+  </ng-container>
+  
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns; sticky: true"
+    ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
   <div class="fbutton">
     <button mat-fab color="primary" (click)="newBus()">
       <mat-icon>add</mat-icon>

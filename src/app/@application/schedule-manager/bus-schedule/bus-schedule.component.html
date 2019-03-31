@@ -4,8 +4,8 @@
 
   <ul class="list">
     <li *ngFor="let collection of collectionOfRouteSchedules">
-        <div class="row_title">
-            {{collection?.route}} <span (click)="showAll(collection?.route)">Show All</span>
+        <div class="row_title" (click)="showAll(collection?.routeNumber)">
+            {{collection?.routeNumber}} | {{collection?.route}} Show All
           </div>
       <div class="row" ng2-carouselamos 
         [items]="collection.schedules"

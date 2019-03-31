@@ -72,6 +72,7 @@ export class DriverScheduleCollection {
             if(routes.length == 0){
                 routes.push({
                     route: res.route,
+                    routeNumber: res.busNumber,
                     schedules: [
                         {
                             assignDate: (typeof res.startTime.toDate()=='undefined'?new Date():res.startTime.toDate()),
@@ -103,6 +104,7 @@ export class DriverScheduleCollection {
             if(routes.length > 0 && routes[routes.length-1].route != res.route){
                 routes.push({
                     route: res.route,
+                    routeNumber: res.busNumber,
                     schedules: [
                         {
                             assignDate: (typeof res.startTime.toDate()=='undefined'?new Date():res.startTime.toDate()),

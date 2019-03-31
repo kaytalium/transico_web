@@ -24,6 +24,7 @@ import { BusAndTerminalComponent } from "./bus-and-terminal/bus-and-terminal.com
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import { NewDepotComponent } from './new-depot/new-depot.component';
 import { InspectorAssignmentComponent } from './inspector-assignment/inspector-assignment.component';
+import { AllRouteComponent } from './all-route/all-route.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { InspectorAssignmentComponent } from './inspector-assignment/inspector-a
     InventoryComponent,
     InspectorsComponent,
     BusAndTerminalComponent,
-    InspectorAssignmentComponent
+    InspectorAssignmentComponent,
+    AllRouteComponent
   ],
   imports: [
     CommonModule,

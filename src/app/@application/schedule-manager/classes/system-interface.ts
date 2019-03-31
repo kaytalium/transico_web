@@ -36,6 +36,7 @@ interface StatusInfo {
 
 export interface RouteSchedule {
   route: string;
+  routeNumber: string;
   schedules: Array<Schedule>;
 }
 

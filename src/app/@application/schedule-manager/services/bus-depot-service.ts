@@ -30,7 +30,7 @@ export class BusDepotService {
      }
 
      public getBusFromDepot(depotName: string): Observable<BusFleet[]>{
-      this.busFleetCollection = this.afs.collection('fleet_inventory', query=>query.where("depotName","==",depotName).orderBy("depot", "asc").orderBy("condition","asc"))
+      this.busFleetCollection = this.afs.collection('fleet_inventory', query=>query.where("depot","==",depotName).orderBy("condition","asc"))
         return this.busFleetCollection.valueChanges()
      }
 
