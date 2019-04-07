@@ -1,3 +1,21 @@
 <div class="wrapper">
   <navigation-tag icon="dashboard"></navigation-tag>
+  <div class="content">
+    <div class="left">
+      <div class="control">
+        bus
+      </div>
+    </div>
+    <div class="right">
+      <agm-map [latitude]='dir.origin.lat' [longitude]='dir.origin.lng'>
+        <agm-direction 
+        [origin]="dir.origin" 
+        [destination]="dir.destination"
+        ></agm-direction>
+        
+      </agm-map>
+
+    </div>
+  </div>
 </div>
+<!-- AIzaSyA1f1qwbe1HEFwmc-vdl-l8mIaNIPu_M_w -->
