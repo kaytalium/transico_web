@@ -4,6 +4,7 @@ import { VehicleManagerComponent } from './vehicle-manager/vehicle-manager.compo
 import { NavigationTagModule } from '@src/app/@component/navigation-tag';
 import { AgmCoreModule } from '@agm/core'
 import { AgmDirectionModule } from 'agm-direction'
+import { environment } from '@env/environment';
 
 @NgModule({
   declarations: [VehicleManagerComponent],
@@ -11,7 +12,7 @@ import { AgmDirectionModule } from 'agm-direction'
     CommonModule,
     NavigationTagModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA1f1qwbe1HEFwmc-vdl-l8mIaNIPu_M_w'
+      apiKey: environment.mapKey
     }),
     AgmDirectionModule
   ],
